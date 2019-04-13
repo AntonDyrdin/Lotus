@@ -1,0 +1,33 @@
+D:\Anton\Desktop\Lotus\Lotus\bin\Debug\Lotus.exe.config
+D:\Anton\Desktop\Lotus\Lotus\bin\Debug\Lotus.exe
+D:\Anton\Desktop\Lotus\Lotus\bin\Debug\Lotus.pdb
+D:\Anton\Desktop\Lotus\Lotus\obj\Debug\Lotus.csprojResolveAssemblyReference.cache
+D:\Anton\Desktop\Lotus\Lotus\obj\Debug\Lotus.Form1.resources
+D:\Anton\Desktop\Lotus\Lotus\obj\Debug\Lotus.Properties.Resources.resources
+D:\Anton\Desktop\Lotus\Lotus\obj\Debug\Lotus.csproj.GenerateResource.Cache
+D:\Anton\Desktop\Lotus\Lotus\obj\Debug\Lotus.csproj.CoreCompileInputs.cache
+D:\Anton\Desktop\Lotus\Lotus\obj\Debug\Lotus.exe
+D:\Anton\Desktop\Lotus\Lotus\obj\Debug\Lotus.pdb
+D:\Anton\Desktop\Lotus\Lotus\bin\Debug\AForge.xml
+D:\Anton\Desktop\Lotus\Lotus\bin\Debug\AForge.Controls.xml
+D:\Anton\Desktop\Lotus\Lotus\bin\Debug\AForge.Imaging.xml
+D:\Anton\Desktop\Lotus\Lotus\bin\Debug\AForge.Math.xml
+D:\Anton\Desktop\Lotus\Lotus\bin\Debug\AForge.Video.xml
+D:\Anton\Desktop\Lotus\Lotus\bin\Debug\AForge.Video.DirectShow.xml
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\bin\Debug\Lotus.exe.config
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\bin\Debug\Lotus.exe
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\bin\Debug\Lotus.pdb
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\bin\Debug\AForge.xml
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\bin\Debug\AForge.Controls.xml
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\bin\Debug\AForge.Imaging.xml
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\bin\Debug\AForge.Math.xml
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\bin\Debug\AForge.Video.xml
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\bin\Debug\AForge.Video.DirectShow.xml
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\obj\Debug\Lotus.csprojAssemblyReference.cache
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\obj\Debug\Lotus.Form1.resources
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\obj\Debug\Lotus.Properties.Resources.resources
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\obj\Debug\Lotus.csproj.GenerateResource.cache
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\obj\Debug\Lotus.csproj.CoreCompileInputs.cache
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\obj\Debug\Lotus.csproj.CopyComplete
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\obj\Debug\Lotus.exe
+\\DESKTOP-V4VJU9V\Station Desktop\Lotus\Lotus\obj\Debug\Lotus.pdb
