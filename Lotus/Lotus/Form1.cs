@@ -37,12 +37,12 @@ namespace Lotus
         // Define if the robot movements will be blocking
         const bool MOVE_BLOCKING = false;
 
-        Point sheetPose;
-
+        Point sheetPoseInRCS;
+        Size sheetSize;
         private void Form1_Load(object sender, EventArgs e)
         {
-            sheetPose = new Point(300, -200);
-
+            sheetPoseInRCS = new Point(300, -200);
+            sheetSize = new Size(400, 200);
             // This will create a new icon in the windows toolbar that shows how we can lock/unlock the application
             Setup_Notification_Icon();
 
@@ -77,7 +77,12 @@ namespace Lotus
         {
 
             if (Check_RDK()) { return; }
-            rad_RoboDK_Integrated();
+            try
+            {
+                rad_RoboDK_Integrated();
+            }
+            catch
+            { rad_RoboDK_Integrated(); }
             string filename = "KUKA KR 6 R700 sixx.robot";
 
             // retrieve the newly added item
@@ -93,13 +98,13 @@ namespace Lotus
                 notifybar.Text = "Could not load: " + filename;
             }
             RoboDK.Item sheet = RDK.AddFile("sheet.cadobj");
-            sheet.setPose(Mat.FromXYZRPW(new double[6] { sheetPose.X + 200, sheetPose.Y, 0, 90, 0, 0 }));
-            /*
+            sheet.setPose(Mat.FromXYZRPW(new double[6] { sheetPoseInRCS.X + sheetSize.Height, sheetPoseInRCS.Y, 0, 90, 0, 0 }));
+             /*
             RoboDK.Item box = RDK.AddFile("box.sld");
             box.Scale(new double[3] { 0.3, 0.3, 0.3 });
-            box.setPose(Mat.FromXYZRPW(new double[6] { sheetPose.X , sheetPose.Y, 18, 90, 0, 0 }));
-
-          RobotControl.pickAndPlace(this, new Point(sheetPose.X, sheetPose.Y), new Point(500, -300), 40, 300);
+            box.setPose(Mat.FromXYZRPW(new double[6] { sheetPoseInRCS.X , sheetPoseInRCS.Y, 18, 90, 0, 0 }));
+            
+            RobotControl.pickAndPlace(this, new Point(sheetPose.X, sheetPose.Y), new Point(500, -300), 40, 300);
             */
             RDK.setSimulationSpeed(1);
         }
@@ -140,26 +145,28 @@ namespace Lotus
 
             //перевод в систему координат робота
             Point pointInRCS = convertToRobotCoordinateSystem(point);
-            g.DrawString("x = " + pointInRCS.X.ToString(), new Font("Gotic", 12), Brushes.Red, 10, 50);
-            g.DrawString("y = " + pointInRCS.Y.ToString(), new Font("Gotic", 12), Brushes.Red, 10, 70);
+            g.DrawString("x = " + pointInRCS.X.ToString() + "mm ( " + point.X + "px )", new Font("Gotic", 15), Brushes.Red, 10, 50);
+            g.DrawString("y = " + pointInRCS.Y.ToString() + "mm ( " + point.Y + "px )", new Font("Gotic", 15), Brushes.Red, 10, 70);
+            if (Check_RDK())
+            {
+                RoboDK.Item box = RDK.AddFile("box.sld");
+                box.Scale(new double[3] { 0.3, 0.3, 0.3 });
+                box.setPose(Mat.FromXYZRPW(new double[6] { pointInRCS.X, pointInRCS.Y, 18, 90, 0, 0 }));
 
-            RoboDK.Item box = RDK.AddFile("box.sld");
-            box.Scale(new double[3] { 0.3, 0.3, 0.3 });
-            box.setPose(Mat.FromXYZRPW(new double[6] { pointInRCS.X, pointInRCS.Y, 18, 90, 0, 0 }));
+                ////////////////////////////////////
+                ///////  MOVE TO THE OBJECT    ////
+                ///////////////////////////////////
 
-            ////////////////////////////////////
-            ///////  MOVE TO THE OBJECT    ////
-            ///////////////////////////////////
+                RobotControl.pickAndPlace(this, pointInRCS, new Point(500, 0), 40, 300);
 
-            RobotControl.pickAndPlace(this, pointInRCS, new Point(500, 0), 40, 300);
-
-            box.setPose(Mat.FromXYZRPW(new double[6] { 500, 0, 18, 90, 0, 0 }));
+                box.setPose(Mat.FromXYZRPW(new double[6] { 500, 0, 18, 90, 0, 0 }));
+            }
         }
 
         Point convertToRobotCoordinateSystem(Point point)
         {
-            double X = sheetPose.X + 28.5 * (point.X - work_zone_points[0].X) / (work_zone_points[1].X - work_zone_points[0].X);
-            double Y = sheetPose.Y + 19.5 * (point.Y - work_zone_points[0].Y) / (work_zone_points[3].Y - work_zone_points[0].Y);
+            double Y = sheetPoseInRCS.Y + sheetSize.Width* (point.X - work_zone_points[0].X) / (work_zone_points[1].X - work_zone_points[0].X);
+            double X = sheetPoseInRCS.X + sheetSize.Height * (point.Y - work_zone_points[0].Y) / (work_zone_points[3].Y - work_zone_points[0].Y);
             return new Point((int)(X), (int)(Y));
         }
         //////////////////////////////////////////////////////////////////
@@ -420,8 +427,8 @@ namespace Lotus
                         work_zone_points = new List<Point>();
                     }
 
-                    var X = MousePosition.X - tabControl1.Location.X - pictureBox1.Location.X - 4;
-                    var Y = MousePosition.Y - tabControl1.Location.Y - pictureBox1.Location.Y - 45;
+                    var X = MousePosition.X - this.Location.X - tabControl1.Location.X - pictureBox1.Location.X - 12;
+                    var Y = MousePosition.Y - this.Location.Y - tabControl1.Location.Y - pictureBox1.Location.Y - 53;
                     work_zone_points.Add(new Point(X, Y));
                     point_count++;
 
