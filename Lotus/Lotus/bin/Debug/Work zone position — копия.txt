@@ -1,0 +1,4 @@
+LeftUp: 0;0
+RightUp: 639;0
+RightDown: 639;479
+LeftDown: 0;479

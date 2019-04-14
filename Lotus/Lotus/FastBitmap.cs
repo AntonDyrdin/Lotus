@@ -2,11 +2,11 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace WatchDog
+namespace Lotus
 {
     public unsafe class FastBitmap
     {
-        Bitmap bitmap;
+        public Bitmap bitmap;
 
         // three elements used for MakeGreyUnsafe
         int _width;
