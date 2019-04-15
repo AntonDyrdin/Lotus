@@ -99,13 +99,13 @@ namespace Lotus
             }
             RoboDK.Item sheet = RDK.AddFile("sheet.cadobj");
             sheet.setPose(Mat.FromXYZRPW(new double[6] { sheetPoseInRCS.X + sheetSize.Height, sheetPoseInRCS.Y, 0, 90, 0, 0 }));
-             /*
-            RoboDK.Item box = RDK.AddFile("box.sld");
-            box.Scale(new double[3] { 0.3, 0.3, 0.3 });
-            box.setPose(Mat.FromXYZRPW(new double[6] { sheetPoseInRCS.X , sheetPoseInRCS.Y, 18, 90, 0, 0 }));
-            
-            RobotControl.pickAndPlace(this, new Point(sheetPose.X, sheetPose.Y), new Point(500, -300), 40, 300);
-            */
+            /*
+           RoboDK.Item box = RDK.AddFile("box.sld");
+           box.Scale(new double[3] { 0.3, 0.3, 0.3 });
+           box.setPose(Mat.FromXYZRPW(new double[6] { sheetPoseInRCS.X , sheetPoseInRCS.Y, 18, 90, 0, 0 }));
+
+           RobotControl.pickAndPlace(this, new Point(sheetPose.X, sheetPose.Y), new Point(500, -300), 40, 300);
+           */
             RDK.setSimulationSpeed(1);
         }
 
@@ -134,8 +134,8 @@ namespace Lotus
             //отрисовка маски
             for (int i = 0; i < recognition.objectMask.Count; i = i + 10)
             {
-                g.DrawLine(new Pen(Color.Blue), recognition.objectMask[i].X - 3, recognition.objectMask[i].Y, recognition.objectMask[i].X + 3, recognition.objectMask[i].Y);
-                g.DrawLine(new Pen(Color.Blue), recognition.objectMask[i].X, recognition.objectMask[i].Y - 3, recognition.objectMask[i].X, recognition.objectMask[i].Y + 3);
+                g.DrawLine(new Pen(Color.Green), recognition.objectMask[i].X - 3, recognition.objectMask[i].Y, recognition.objectMask[i].X + 3, recognition.objectMask[i].Y);
+                g.DrawLine(new Pen(Color.Green), recognition.objectMask[i].X, recognition.objectMask[i].Y - 3, recognition.objectMask[i].X, recognition.objectMask[i].Y + 3);
             }
 
             g.DrawLine(new Pen(Color.Red), point.X - 10, point.Y, point.X + 10, point.Y);
@@ -165,12 +165,12 @@ namespace Lotus
 
         Point convertToRobotCoordinateSystem(Point point)
         {
-            double Y = sheetPoseInRCS.Y + sheetSize.Width* (point.X - work_zone_points[0].X) / (work_zone_points[1].X - work_zone_points[0].X);
+            double Y = sheetPoseInRCS.Y + sheetSize.Width * (point.X - work_zone_points[0].X) / (work_zone_points[1].X - work_zone_points[0].X);
             double X = sheetPoseInRCS.X + sheetSize.Height * (point.Y - work_zone_points[0].Y) / (work_zone_points[3].Y - work_zone_points[0].Y);
             return new Point((int)(X), (int)(Y));
         }
-        //////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////
+
+
         //////////////////////////////////////////////////////////////////
         ////////// Test button for general purpose tests ///////////////////////
 
@@ -308,30 +308,10 @@ namespace Lotus
                 //ROBOT.Finish();
                 //RDK.Finish();
                 // RDK.Connect(); // redundant
-                RDK.Finish(); // ignores any previous activity to generate the program
-                RDK.setRunMode(RoboDK.RUNMODE_MAKE_ROBOTPROG); // Very important to set first
-                RDK.ProgramStart("TestProg1", "C:\\Users\\Albert\\Desktop\\", "KAIRO.py", ROBOT);
-                double[] joints1 = new double[6] { 1, 2, -50, 4, 5, 6 };
-                double[] joints2 = new double[6] { -1, -2, -50, 4, 5, 6 };
-
-                ROBOT.MoveJ(joints1);
-                ROBOT.MoveJ(joints2);
-                ROBOT.Finish(); // provoke program generation
-
-
-
-                RDK.Finish(); // ignores any previous activity to generate the program
-                RDK.setRunMode(RoboDK.RUNMODE_MAKE_ROBOTPROG); // Very important to set first
-                RDK.ProgramStart("TestProg2_no_robot", "C:\\Users\\Albert\\Desktop\\", "Fanuc_RJ3.py");
-                RDK.RunProgram("Program1");
-                RDK.RunCode("Output Raw code");
-                RDK.Finish(); // provoke program generation
-
-
 
                 ROBOT.Finish(); // ignores any previous activity to generate the program
                 RDK.setRunMode(RoboDK.RUNMODE_MAKE_ROBOTPROG); // Very important to set first
-                RDK.ProgramStart("TestProg3", "C:\\Users\\Albert\\Desktop\\", "GSK.py", ROBOT);
+                RDK.ProgramStart("TestProg3", "D:\\Anton\\Desktop\\", "test.py", ROBOT);
                 double[] joints3 = new double[6] { 10, 20, 30, 40, 50, 60 };
                 double[] joints4 = new double[6] { -10, -20, -30, 40, 50, 60 };
 
@@ -368,25 +348,7 @@ namespace Lotus
             pose = Mat.FromUR(xyzwpr);
             double[] xyzwpr_a = pose.ToUR();
             double[] xyzwpr_b = pose.ToUR_Alternative();
-
-            Console.WriteLine("Option one:");
-            Console.Write(Mat.FromUR(xyzwpr_a).ToString());
-            Console.Write(xyzwpr_a[0]); Console.WriteLine("");
-            Console.Write(xyzwpr_a[1]); Console.WriteLine("");
-            Console.Write(xyzwpr_a[2]); Console.WriteLine("");
-            Console.Write(xyzwpr_a[3] * 180.0 / Math.PI); Console.WriteLine("");
-            Console.Write(xyzwpr_a[4] * 180.0 / Math.PI); Console.WriteLine("");
-            Console.Write(xyzwpr_a[5] * 180.0 / Math.PI); Console.WriteLine("");
-
-            Console.WriteLine("Option Two:");
-            Console.Write(Mat.FromUR(xyzwpr_b).ToString());
-            Console.Write(xyzwpr_b[0]); Console.WriteLine("");
-            Console.Write(xyzwpr_b[1]); Console.WriteLine("");
-            Console.Write(xyzwpr_b[2]); Console.WriteLine("");
-            Console.Write(xyzwpr_b[3] * 180.0 / Math.PI); Console.WriteLine("");
-            Console.Write(xyzwpr_b[4] * 180.0 / Math.PI); Console.WriteLine("");
-            Console.Write(xyzwpr_b[5] * 180.0 / Math.PI); Console.WriteLine("");*/
-
+    */
         }
         // New snapshot frame is available
         private void videoDevice_SnapshotFrame(object sender, NewFrameEventArgs eventArgs)
@@ -539,43 +501,6 @@ namespace Lotus
                 {
                     notifybar.Text = "Could not load: " + filename;
                 }
-            }
-        }
-
-        /// <summary>
-        /// Update the ROBOT variable by choosing the robot available in the currently open station
-        /// If more than one robot is available, a popup will be displayed
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnSelectRobot_Click(object sender, EventArgs e)
-        {
-            SelectRobot();
-        }
-
-        /// <summary>
-        /// Update the ROBOT variable by choosing the robot available in the currently open station
-        /// If more than one robot is available, a popup will be displayed
-        /// </summary>
-        public void SelectRobot()
-        {
-            notifybar.Text = "Selecting robot...";
-            if (!Check_RDK())
-            {
-                ROBOT = null;
-                return;
-            }
-            ROBOT = RDK.ItemUserPick("Select a robot", RoboDK.ITEM_TYPE_ROBOT); // select robot among available robots
-            //ROBOT = RL.getItem("ABB IRB120", ITEM_TYPE_ROBOT); // select by name
-            //ITEM = RL.ItemUserPick("Select an item"); // Select any item in the station
-            if (ROBOT.Valid())
-            {
-                ROBOT.NewLink(); // This will create a new communication link (another instance of the RoboDK API), this is useful if we are moving 2 robots at the same time.                
-                notifybar.Text = "Using robot: " + ROBOT.Name();
-            }
-            else
-            {
-                notifybar.Text = "Robot not available. Load a file first";
             }
         }
 
@@ -811,7 +736,7 @@ namespace Lotus
             RDK.Finish();
 
             // Connect to real robot
-            if (ROBOT.Connect())
+            if (ROBOT.Connect("192.168.1.47"))
             {
                 // Set to Run on Robot robot mode:
                 RDK.setRunMode(RoboDK.RUNMODE_RUN_ROBOT);
@@ -823,64 +748,31 @@ namespace Lotus
 
             }
         }
-
-
-        ///////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////
-        ////////////// Example to run a program //////////////
-
-        private void btnRun_Program_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Update the ROBOT variable by choosing the robot available in the currently open station
+        /// If more than one robot is available, a popup will be displayed
+        /// </summary>
+        public void SelectRobot()
         {
-            // Check that there is a link with RoboDK:
-            if (!Check_RDK()) { return; }
-
-            string progname = txtRunProgram.Text;
-
-            // Retrieve the program item program
-            RoboDK.Item prog = RDK.getItem(progname, RoboDK.ITEM_TYPE_PROGRAM);
-            if (prog.Valid())
+            notifybar.Text = "Selecting robot...";
+            if (!Check_RDK())
             {
-
-                //double percent_OK = prog.Update(RoboDK.COLLISION_ON, 3600, null, 4, 4) * 100.0;
-                //notifybar.Text = "Program check: " + percent_OK.ToString("0.0") + " % " + (percent_OK == 100.0 ? " OK " : " WARNING!!");
-
-
-                string error_msg;
-                Mat joints_mat;
-                prog.InstructionListJoints(out error_msg, out joints_mat, 4, 4, "", RoboDK.COLLISION_ON);
-                string result = joints_mat.ToString();
-
-
+                ROBOT = null;
                 return;
-
-                if (rad_RunMode_Online.Checked)
-                {
-                    // force to run on robot
-                    prog.setRunType(RoboDK.PROGRAM_RUN_ON_ROBOT);
-                }
-                else if (rad_RunMode_Program.Checked)
-                {
-                    // generate a program call to another program
-                    ROBOT.RunCodeCustom(progname);
-                }
-                else
-                {
-                    // force to run in simulation mode
-                    prog.setRunType(RoboDK.PROGRAM_RUN_ON_SIMULATOR);
-                }
-                //prog.setRunType(RoboDK.PROGRAM_RUN_ON_SIMULATOR);  // if RunMode == RUNMODE_RUN_ON_ROBOT it will start the program on the robot controller
-                notifybar.Text = "Running program: " + txtRunProgram.Text;
-                prog.RunProgram();
+            }
+            ROBOT = RDK.ItemUserPick("Select a robot", RoboDK.ITEM_TYPE_ROBOT); // select robot among available robots
+            //ROBOT = RL.getItem("ABB IRB120", ITEM_TYPE_ROBOT); // select by name
+            //ITEM = RL.ItemUserPick("Select an item"); // Select any item in the station
+            if (ROBOT.Valid())
+            {
+                ROBOT.NewLink(); // This will create a new communication link (another instance of the RoboDK API), this is useful if we are moving 2 robots at the same time.                
+                notifybar.Text = "Using robot: " + ROBOT.Name();
             }
             else
             {
-                notifybar.Text = "The program " + txtRunProgram.Text + " does not exist.";
-                //MessageBox.Show("The program does not exist.");
+                notifybar.Text = "Robot not available. Load a file first";
             }
         }
-
-
-
         //////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////
         ///////////////// GROUP DISPLAY MODE ////////////////
@@ -1506,7 +1398,7 @@ namespace Lotus
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-
+            connectButton_Click(null, null);
 
         }
         // Closing the main form
@@ -1620,6 +1512,11 @@ namespace Lotus
 
                 EnableConnectionControls(true);
             }
+        }
+
+        private void panel_rdk_Paint(object sender, PaintEventArgs e)
+        {
+
         }
         // Simulate snapshot trigger
 

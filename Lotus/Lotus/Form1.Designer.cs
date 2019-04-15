@@ -55,6 +55,7 @@
             this.rad_RunMode_Online = new System.Windows.Forms.RadioButton();
             this.rad_RunMode_Program = new System.Windows.Forms.RadioButton();
             this.groupIncrementalMove = new System.Windows.Forms.GroupBox();
+            this.btnTXneg = new System.Windows.Forms.Button();
             this.numStep = new System.Windows.Forms.NumericUpDown();
             this.lblstepIncrement = new System.Windows.Forms.Label();
             this.rad_Move_Joints = new System.Windows.Forms.RadioButton();
@@ -73,10 +74,6 @@
             this.btnRXpos = new System.Windows.Forms.Button();
             this.btnRunTestProgram = new System.Windows.Forms.Button();
             this.btnSelectStation = new System.Windows.Forms.Button();
-            this.btnRun_Program = new System.Windows.Forms.Button();
-            this.txtRunProgram = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnSelectRobot = new System.Windows.Forms.Button();
             this.btnMoveJoints = new System.Windows.Forms.Button();
             this.txtJoints = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -87,7 +84,6 @@
             this.panel_rdk = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.notifybar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnTXneg = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,6 +99,8 @@
             // 
             // triggerButton
             // 
+            this.triggerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.triggerButton.ForeColor = System.Drawing.Color.White;
             this.triggerButton.Location = new System.Drawing.Point(435, 72);
             this.triggerButton.Name = "triggerButton";
             this.triggerButton.Size = new System.Drawing.Size(75, 23);
@@ -119,15 +117,15 @@
             this.panel1.Controls.Add(this.videoSourcePlayer);
             this.panel1.Location = new System.Drawing.Point(5, 101);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(505, 318);
+            this.panel1.Size = new System.Drawing.Size(505, 293);
             this.panel1.TabIndex = 18;
             // 
             // videoSourcePlayer
             // 
             this.videoSourcePlayer.AutoSizeControl = true;
             this.videoSourcePlayer.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.videoSourcePlayer.ForeColor = System.Drawing.Color.DarkRed;
-            this.videoSourcePlayer.Location = new System.Drawing.Point(91, 38);
+            this.videoSourcePlayer.ForeColor = System.Drawing.Color.Yellow;
+            this.videoSourcePlayer.Location = new System.Drawing.Point(91, 25);
             this.videoSourcePlayer.Name = "videoSourcePlayer";
             this.videoSourcePlayer.Size = new System.Drawing.Size(322, 242);
             this.videoSourcePlayer.TabIndex = 1;
@@ -136,6 +134,8 @@
             // 
             // disconnectButton
             // 
+            this.disconnectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.disconnectButton.ForeColor = System.Drawing.Color.White;
             this.disconnectButton.Location = new System.Drawing.Point(435, 42);
             this.disconnectButton.Name = "disconnectButton";
             this.disconnectButton.Size = new System.Drawing.Size(75, 23);
@@ -146,6 +146,8 @@
             // 
             // connectButton
             // 
+            this.connectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.connectButton.ForeColor = System.Drawing.Color.White;
             this.connectButton.Location = new System.Drawing.Point(435, 12);
             this.connectButton.Name = "connectButton";
             this.connectButton.Size = new System.Drawing.Size(75, 23);
@@ -157,6 +159,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(210, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 13);
@@ -184,6 +187,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(15, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 13);
@@ -203,6 +207,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(15, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
@@ -211,7 +216,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.pictureBox1.Location = new System.Drawing.Point(5, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(640, 480);
@@ -221,6 +226,8 @@
             // 
             // button1
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(516, 220);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 54);
@@ -231,7 +238,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.pictureBox2.Location = new System.Drawing.Point(5, 5);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(640, 480);
@@ -241,6 +248,8 @@
             // button2
             // 
             this.button2.Enabled = false;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(516, 280);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(145, 54);
@@ -261,6 +270,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -268,10 +278,10 @@
             this.tabPage1.Size = new System.Drawing.Size(652, 493);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Original image";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -279,10 +289,11 @@
             this.tabPage2.Size = new System.Drawing.Size(652, 493);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Recognition";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(516, 340);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(145, 54);
@@ -293,9 +304,11 @@
             // 
             // btnMoveRobotHome
             // 
-            this.btnMoveRobotHome.Location = new System.Drawing.Point(681, 60);
+            this.btnMoveRobotHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMoveRobotHome.ForeColor = System.Drawing.Color.White;
+            this.btnMoveRobotHome.Location = new System.Drawing.Point(811, 13);
             this.btnMoveRobotHome.Name = "btnMoveRobotHome";
-            this.btnMoveRobotHome.Size = new System.Drawing.Size(141, 22);
+            this.btnMoveRobotHome.Size = new System.Drawing.Size(131, 54);
             this.btnMoveRobotHome.TabIndex = 70;
             this.btnMoveRobotHome.Text = "Move Robot Home";
             this.btnMoveRobotHome.UseVisualStyleBackColor = true;
@@ -307,18 +320,19 @@
             this.groupRunMode.Controls.Add(this.rad_RunMode_Simulation);
             this.groupRunMode.Controls.Add(this.rad_RunMode_Online);
             this.groupRunMode.Controls.Add(this.rad_RunMode_Program);
-            this.groupRunMode.Location = new System.Drawing.Point(893, 7);
+            this.groupRunMode.ForeColor = System.Drawing.Color.White;
+            this.groupRunMode.Location = new System.Drawing.Point(671, 72);
             this.groupRunMode.Name = "groupRunMode";
-            this.groupRunMode.Size = new System.Drawing.Size(216, 100);
+            this.groupRunMode.Size = new System.Drawing.Size(271, 77);
             this.groupRunMode.TabIndex = 69;
             this.groupRunMode.TabStop = false;
             this.groupRunMode.Text = "Run Mode";
             // 
             // btnOLPdone
             // 
-            this.btnOLPdone.Location = new System.Drawing.Point(123, 43);
+            this.btnOLPdone.Location = new System.Drawing.Point(140, 42);
             this.btnOLPdone.Name = "btnOLPdone";
-            this.btnOLPdone.Size = new System.Drawing.Size(89, 23);
+            this.btnOLPdone.Size = new System.Drawing.Size(119, 23);
             this.btnOLPdone.TabIndex = 0;
             this.btnOLPdone.Text = "Generate Prog";
             this.btnOLPdone.Click += new System.EventHandler(this.btnOLPdone_Click);
@@ -326,6 +340,7 @@
             // rad_RunMode_Simulation
             // 
             this.rad_RunMode_Simulation.AutoSize = true;
+            this.rad_RunMode_Simulation.ForeColor = System.Drawing.Color.White;
             this.rad_RunMode_Simulation.Location = new System.Drawing.Point(7, 21);
             this.rad_RunMode_Simulation.Name = "rad_RunMode_Simulation";
             this.rad_RunMode_Simulation.Size = new System.Drawing.Size(73, 17);
@@ -338,7 +353,8 @@
             // rad_RunMode_Online
             // 
             this.rad_RunMode_Online.AutoSize = true;
-            this.rad_RunMode_Online.Location = new System.Drawing.Point(7, 73);
+            this.rad_RunMode_Online.ForeColor = System.Drawing.Color.White;
+            this.rad_RunMode_Online.Location = new System.Drawing.Point(6, 44);
             this.rad_RunMode_Online.Name = "rad_RunMode_Online";
             this.rad_RunMode_Online.Size = new System.Drawing.Size(94, 17);
             this.rad_RunMode_Online.TabIndex = 47;
@@ -350,7 +366,8 @@
             // rad_RunMode_Program
             // 
             this.rad_RunMode_Program.AutoSize = true;
-            this.rad_RunMode_Program.Location = new System.Drawing.Point(7, 47);
+            this.rad_RunMode_Program.ForeColor = System.Drawing.Color.White;
+            this.rad_RunMode_Program.Location = new System.Drawing.Point(140, 17);
             this.rad_RunMode_Program.Name = "rad_RunMode_Program";
             this.rad_RunMode_Program.Size = new System.Drawing.Size(119, 17);
             this.rad_RunMode_Program.TabIndex = 48;
@@ -378,12 +395,26 @@
             this.groupIncrementalMove.Controls.Add(this.btnRXneg);
             this.groupIncrementalMove.Controls.Add(this.btnRYneg);
             this.groupIncrementalMove.Controls.Add(this.btnRXpos);
-            this.groupIncrementalMove.Location = new System.Drawing.Point(1143, 7);
+            this.groupIncrementalMove.ForeColor = System.Drawing.Color.White;
+            this.groupIncrementalMove.Location = new System.Drawing.Point(948, 10);
             this.groupIncrementalMove.Name = "groupIncrementalMove";
-            this.groupIncrementalMove.Size = new System.Drawing.Size(161, 260);
+            this.groupIncrementalMove.Size = new System.Drawing.Size(351, 237);
             this.groupIncrementalMove.TabIndex = 68;
             this.groupIncrementalMove.TabStop = false;
             this.groupIncrementalMove.Text = "Incremental Move";
+            // 
+            // btnTXneg
+            // 
+            this.btnTXneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTXneg.ForeColor = System.Drawing.Color.White;
+            this.btnTXneg.Location = new System.Drawing.Point(175, 10);
+            this.btnTXneg.Margin = new System.Windows.Forms.Padding(1);
+            this.btnTXneg.Name = "btnTXneg";
+            this.btnTXneg.Size = new System.Drawing.Size(67, 23);
+            this.btnTXneg.TabIndex = 49;
+            this.btnTXneg.Text = "X-";
+            this.btnTXneg.UseVisualStyleBackColor = true;
+            this.btnTXneg.Click += new System.EventHandler(this.btnTXneg_Click);
             // 
             // numStep
             // 
@@ -406,6 +437,7 @@
             // lblstepIncrement
             // 
             this.lblstepIncrement.AutoSize = true;
+            this.lblstepIncrement.ForeColor = System.Drawing.Color.White;
             this.lblstepIncrement.Location = new System.Drawing.Point(6, 81);
             this.lblstepIncrement.Name = "lblstepIncrement";
             this.lblstepIncrement.Size = new System.Drawing.Size(57, 13);
@@ -415,6 +447,7 @@
             // rad_Move_Joints
             // 
             this.rad_Move_Joints.AutoSize = true;
+            this.rad_Move_Joints.ForeColor = System.Drawing.Color.White;
             this.rad_Move_Joints.Location = new System.Drawing.Point(11, 57);
             this.rad_Move_Joints.Name = "rad_Move_Joints";
             this.rad_Move_Joints.Size = new System.Drawing.Size(77, 17);
@@ -427,6 +460,7 @@
             // rad_Move_wrt_Tool
             // 
             this.rad_Move_wrt_Tool.AutoSize = true;
+            this.rad_Move_wrt_Tool.ForeColor = System.Drawing.Color.White;
             this.rad_Move_wrt_Tool.Location = new System.Drawing.Point(11, 37);
             this.rad_Move_wrt_Tool.Name = "rad_Move_wrt_Tool";
             this.rad_Move_wrt_Tool.Size = new System.Drawing.Size(46, 17);
@@ -439,6 +473,7 @@
             // rad_Move_wrt_Reference
             // 
             this.rad_Move_wrt_Reference.AutoSize = true;
+            this.rad_Move_wrt_Reference.ForeColor = System.Drawing.Color.White;
             this.rad_Move_wrt_Reference.Location = new System.Drawing.Point(11, 17);
             this.rad_Move_wrt_Reference.Name = "rad_Move_wrt_Reference";
             this.rad_Move_wrt_Reference.Size = new System.Drawing.Size(75, 17);
@@ -450,10 +485,12 @@
             // 
             // btnTXpos
             // 
-            this.btnTXpos.Location = new System.Drawing.Point(90, 104);
+            this.btnTXpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTXpos.ForeColor = System.Drawing.Color.White;
+            this.btnTXpos.Location = new System.Drawing.Point(271, 10);
             this.btnTXpos.Margin = new System.Windows.Forms.Padding(1);
             this.btnTXpos.Name = "btnTXpos";
-            this.btnTXpos.Size = new System.Drawing.Size(60, 25);
+            this.btnTXpos.Size = new System.Drawing.Size(67, 23);
             this.btnTXpos.TabIndex = 28;
             this.btnTXpos.Text = "X+";
             this.btnTXpos.UseVisualStyleBackColor = true;
@@ -461,10 +498,12 @@
             // 
             // btnTYneg
             // 
-            this.btnTYneg.Location = new System.Drawing.Point(10, 129);
+            this.btnTYneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTYneg.ForeColor = System.Drawing.Color.White;
+            this.btnTYneg.Location = new System.Drawing.Point(174, 50);
             this.btnTYneg.Margin = new System.Windows.Forms.Padding(1);
             this.btnTYneg.Name = "btnTYneg";
-            this.btnTYneg.Size = new System.Drawing.Size(60, 25);
+            this.btnTYneg.Size = new System.Drawing.Size(67, 23);
             this.btnTYneg.TabIndex = 29;
             this.btnTYneg.Text = "Y-";
             this.btnTYneg.UseVisualStyleBackColor = true;
@@ -472,10 +511,12 @@
             // 
             // btnTYpos
             // 
-            this.btnTYpos.Location = new System.Drawing.Point(90, 129);
+            this.btnTYpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTYpos.ForeColor = System.Drawing.Color.White;
+            this.btnTYpos.Location = new System.Drawing.Point(271, 50);
             this.btnTYpos.Margin = new System.Windows.Forms.Padding(1);
             this.btnTYpos.Name = "btnTYpos";
-            this.btnTYpos.Size = new System.Drawing.Size(60, 25);
+            this.btnTYpos.Size = new System.Drawing.Size(67, 23);
             this.btnTYpos.TabIndex = 30;
             this.btnTYpos.Text = "Y+";
             this.btnTYpos.UseVisualStyleBackColor = true;
@@ -483,10 +524,12 @@
             // 
             // btnRZpos
             // 
-            this.btnRZpos.Location = new System.Drawing.Point(90, 229);
+            this.btnRZpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRZpos.ForeColor = System.Drawing.Color.White;
+            this.btnRZpos.Location = new System.Drawing.Point(271, 210);
             this.btnRZpos.Margin = new System.Windows.Forms.Padding(1);
             this.btnRZpos.Name = "btnRZpos";
-            this.btnRZpos.Size = new System.Drawing.Size(60, 25);
+            this.btnRZpos.Size = new System.Drawing.Size(67, 23);
             this.btnRZpos.TabIndex = 38;
             this.btnRZpos.Text = "rZ+";
             this.btnRZpos.UseVisualStyleBackColor = true;
@@ -494,10 +537,12 @@
             // 
             // btnTZneg
             // 
-            this.btnTZneg.Location = new System.Drawing.Point(10, 154);
+            this.btnTZneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTZneg.ForeColor = System.Drawing.Color.White;
+            this.btnTZneg.Location = new System.Drawing.Point(174, 90);
             this.btnTZneg.Margin = new System.Windows.Forms.Padding(1);
             this.btnTZneg.Name = "btnTZneg";
-            this.btnTZneg.Size = new System.Drawing.Size(60, 25);
+            this.btnTZneg.Size = new System.Drawing.Size(67, 23);
             this.btnTZneg.TabIndex = 31;
             this.btnTZneg.Text = "Z-";
             this.btnTZneg.UseVisualStyleBackColor = true;
@@ -505,10 +550,12 @@
             // 
             // btnRZneg
             // 
-            this.btnRZneg.Location = new System.Drawing.Point(10, 229);
+            this.btnRZneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRZneg.ForeColor = System.Drawing.Color.White;
+            this.btnRZneg.Location = new System.Drawing.Point(174, 210);
             this.btnRZneg.Margin = new System.Windows.Forms.Padding(1);
             this.btnRZneg.Name = "btnRZneg";
-            this.btnRZneg.Size = new System.Drawing.Size(60, 25);
+            this.btnRZneg.Size = new System.Drawing.Size(67, 23);
             this.btnRZneg.TabIndex = 37;
             this.btnRZneg.Text = "rZ-";
             this.btnRZneg.UseVisualStyleBackColor = true;
@@ -516,10 +563,12 @@
             // 
             // btnTZpos
             // 
-            this.btnTZpos.Location = new System.Drawing.Point(90, 154);
+            this.btnTZpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTZpos.ForeColor = System.Drawing.Color.White;
+            this.btnTZpos.Location = new System.Drawing.Point(271, 90);
             this.btnTZpos.Margin = new System.Windows.Forms.Padding(1);
             this.btnTZpos.Name = "btnTZpos";
-            this.btnTZpos.Size = new System.Drawing.Size(60, 25);
+            this.btnTZpos.Size = new System.Drawing.Size(67, 23);
             this.btnTZpos.TabIndex = 32;
             this.btnTZpos.Text = "Z+";
             this.btnTZpos.UseVisualStyleBackColor = true;
@@ -527,10 +576,12 @@
             // 
             // btnRYpos
             // 
-            this.btnRYpos.Location = new System.Drawing.Point(90, 204);
+            this.btnRYpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRYpos.ForeColor = System.Drawing.Color.White;
+            this.btnRYpos.Location = new System.Drawing.Point(271, 170);
             this.btnRYpos.Margin = new System.Windows.Forms.Padding(1);
             this.btnRYpos.Name = "btnRYpos";
-            this.btnRYpos.Size = new System.Drawing.Size(60, 25);
+            this.btnRYpos.Size = new System.Drawing.Size(67, 23);
             this.btnRYpos.TabIndex = 36;
             this.btnRYpos.Text = "rY+";
             this.btnRYpos.UseVisualStyleBackColor = true;
@@ -538,10 +589,12 @@
             // 
             // btnRXneg
             // 
-            this.btnRXneg.Location = new System.Drawing.Point(10, 179);
+            this.btnRXneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRXneg.ForeColor = System.Drawing.Color.White;
+            this.btnRXneg.Location = new System.Drawing.Point(174, 130);
             this.btnRXneg.Margin = new System.Windows.Forms.Padding(1);
             this.btnRXneg.Name = "btnRXneg";
-            this.btnRXneg.Size = new System.Drawing.Size(60, 25);
+            this.btnRXneg.Size = new System.Drawing.Size(67, 23);
             this.btnRXneg.TabIndex = 33;
             this.btnRXneg.Text = "rX-";
             this.btnRXneg.UseVisualStyleBackColor = true;
@@ -549,10 +602,12 @@
             // 
             // btnRYneg
             // 
-            this.btnRYneg.Location = new System.Drawing.Point(10, 204);
+            this.btnRYneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRYneg.ForeColor = System.Drawing.Color.White;
+            this.btnRYneg.Location = new System.Drawing.Point(174, 170);
             this.btnRYneg.Margin = new System.Windows.Forms.Padding(1);
             this.btnRYneg.Name = "btnRYneg";
-            this.btnRYneg.Size = new System.Drawing.Size(60, 25);
+            this.btnRYneg.Size = new System.Drawing.Size(67, 23);
             this.btnRYneg.TabIndex = 35;
             this.btnRYneg.Text = "rY-";
             this.btnRYneg.UseVisualStyleBackColor = true;
@@ -560,10 +615,12 @@
             // 
             // btnRXpos
             // 
-            this.btnRXpos.Location = new System.Drawing.Point(90, 179);
+            this.btnRXpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRXpos.ForeColor = System.Drawing.Color.White;
+            this.btnRXpos.Location = new System.Drawing.Point(271, 130);
             this.btnRXpos.Margin = new System.Windows.Forms.Padding(1);
             this.btnRXpos.Name = "btnRXpos";
-            this.btnRXpos.Size = new System.Drawing.Size(60, 25);
+            this.btnRXpos.Size = new System.Drawing.Size(67, 23);
             this.btnRXpos.TabIndex = 34;
             this.btnRXpos.Text = "rX+";
             this.btnRXpos.UseVisualStyleBackColor = true;
@@ -571,9 +628,11 @@
             // 
             // btnRunTestProgram
             // 
-            this.btnRunTestProgram.Location = new System.Drawing.Point(681, 85);
+            this.btnRunTestProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRunTestProgram.ForeColor = System.Drawing.Color.White;
+            this.btnRunTestProgram.Location = new System.Drawing.Point(671, 45);
             this.btnRunTestProgram.Name = "btnRunTestProgram";
-            this.btnRunTestProgram.Size = new System.Drawing.Size(141, 22);
+            this.btnRunTestProgram.Size = new System.Drawing.Size(136, 22);
             this.btnRunTestProgram.TabIndex = 65;
             this.btnRunTestProgram.Text = "Run Test Program";
             this.btnRunTestProgram.UseVisualStyleBackColor = true;
@@ -581,59 +640,22 @@
             // 
             // btnSelectStation
             // 
-            this.btnSelectStation.Location = new System.Drawing.Point(681, 10);
+            this.btnSelectStation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectStation.ForeColor = System.Drawing.Color.White;
+            this.btnSelectStation.Location = new System.Drawing.Point(671, 13);
             this.btnSelectStation.Margin = new System.Windows.Forms.Padding(1);
             this.btnSelectStation.Name = "btnSelectStation";
-            this.btnSelectStation.Size = new System.Drawing.Size(141, 22);
+            this.btnSelectStation.Size = new System.Drawing.Size(136, 28);
             this.btnSelectStation.TabIndex = 64;
             this.btnSelectStation.Text = "Load File";
             this.btnSelectStation.UseVisualStyleBackColor = true;
             this.btnSelectStation.Click += new System.EventHandler(this.btnLoadFile_Click);
             // 
-            // btnRun_Program
-            // 
-            this.btnRun_Program.Location = new System.Drawing.Point(1052, 237);
-            this.btnRun_Program.Margin = new System.Windows.Forms.Padding(1);
-            this.btnRun_Program.Name = "btnRun_Program";
-            this.btnRun_Program.Size = new System.Drawing.Size(87, 22);
-            this.btnRun_Program.TabIndex = 63;
-            this.btnRun_Program.Text = "Run Program";
-            this.btnRun_Program.UseVisualStyleBackColor = true;
-            this.btnRun_Program.Click += new System.EventHandler(this.btnRun_Program_Click);
-            // 
-            // txtRunProgram
-            // 
-            this.txtRunProgram.Location = new System.Drawing.Point(950, 238);
-            this.txtRunProgram.Margin = new System.Windows.Forms.Padding(1);
-            this.txtRunProgram.Name = "txtRunProgram";
-            this.txtRunProgram.Size = new System.Drawing.Size(100, 20);
-            this.txtRunProgram.TabIndex = 62;
-            this.txtRunProgram.Text = "MainProgram";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(870, 242);
-            this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
-            this.label4.TabIndex = 61;
-            this.label4.Text = "Program name:";
-            // 
-            // btnSelectRobot
-            // 
-            this.btnSelectRobot.Location = new System.Drawing.Point(681, 35);
-            this.btnSelectRobot.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSelectRobot.Name = "btnSelectRobot";
-            this.btnSelectRobot.Size = new System.Drawing.Size(141, 22);
-            this.btnSelectRobot.TabIndex = 60;
-            this.btnSelectRobot.Text = "Select Robot";
-            this.btnSelectRobot.UseVisualStyleBackColor = true;
-            this.btnSelectRobot.Click += new System.EventHandler(this.btnSelectRobot_Click);
-            // 
             // btnMoveJoints
             // 
-            this.btnMoveJoints.Location = new System.Drawing.Point(1038, 126);
+            this.btnMoveJoints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMoveJoints.ForeColor = System.Drawing.Color.White;
+            this.btnMoveJoints.Location = new System.Drawing.Point(841, 153);
             this.btnMoveJoints.Margin = new System.Windows.Forms.Padding(1);
             this.btnMoveJoints.Name = "btnMoveJoints";
             this.btnMoveJoints.Size = new System.Drawing.Size(101, 21);
@@ -644,7 +666,7 @@
             // 
             // txtJoints
             // 
-            this.txtJoints.Location = new System.Drawing.Point(948, 148);
+            this.txtJoints.Location = new System.Drawing.Point(751, 175);
             this.txtJoints.Margin = new System.Windows.Forms.Padding(1);
             this.txtJoints.Name = "txtJoints";
             this.txtJoints.Size = new System.Drawing.Size(191, 20);
@@ -654,7 +676,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(945, 130);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(748, 157);
             this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 13);
@@ -663,7 +686,9 @@
             // 
             // btnMovePose
             // 
-            this.btnMovePose.Location = new System.Drawing.Point(1038, 177);
+            this.btnMovePose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMovePose.ForeColor = System.Drawing.Color.White;
+            this.btnMovePose.Location = new System.Drawing.Point(841, 204);
             this.btnMovePose.Margin = new System.Windows.Forms.Padding(1);
             this.btnMovePose.Name = "btnMovePose";
             this.btnMovePose.Size = new System.Drawing.Size(101, 21);
@@ -674,18 +699,20 @@
             // 
             // btnGetJoints
             // 
-            this.btnGetJoints.Location = new System.Drawing.Point(868, 127);
+            this.btnGetJoints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGetJoints.ForeColor = System.Drawing.Color.White;
+            this.btnGetJoints.Location = new System.Drawing.Point(671, 154);
             this.btnGetJoints.Margin = new System.Windows.Forms.Padding(1);
             this.btnGetJoints.Name = "btnGetJoints";
             this.btnGetJoints.Size = new System.Drawing.Size(75, 93);
             this.btnGetJoints.TabIndex = 55;
-            this.btnGetJoints.Text = "Retrieve Current Position";
+            this.btnGetJoints.Text = "Read Current Position";
             this.btnGetJoints.UseVisualStyleBackColor = true;
             this.btnGetJoints.Click += new System.EventHandler(this.btnGetJoints_Click);
             // 
             // txtPosition
             // 
-            this.txtPosition.Location = new System.Drawing.Point(948, 200);
+            this.txtPosition.Location = new System.Drawing.Point(751, 227);
             this.txtPosition.Margin = new System.Windows.Forms.Padding(1);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(191, 20);
@@ -695,7 +722,8 @@
             // lblJ1
             // 
             this.lblJ1.AutoSize = true;
-            this.lblJ1.Location = new System.Drawing.Point(945, 181);
+            this.lblJ1.ForeColor = System.Drawing.Color.White;
+            this.lblJ1.Location = new System.Drawing.Point(748, 208);
             this.lblJ1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblJ1.Name = "lblJ1";
             this.lblJ1.Size = new System.Drawing.Size(91, 13);
@@ -708,10 +736,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_rdk.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel_rdk.Location = new System.Drawing.Point(671, 273);
+            this.panel_rdk.BackColor = System.Drawing.Color.Transparent;
+            this.panel_rdk.Location = new System.Drawing.Point(671, 253);
             this.panel_rdk.Name = "panel_rdk";
-            this.panel_rdk.Size = new System.Drawing.Size(640, 638);
+            this.panel_rdk.Size = new System.Drawing.Size(640, 658);
             this.panel_rdk.TabIndex = 71;
+            this.panel_rdk.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_rdk_Paint);
             // 
             // statusStrip1
             // 
@@ -725,26 +755,18 @@
             // 
             // notifybar
             // 
+            this.notifybar.ForeColor = System.Drawing.Color.White;
             this.notifybar.Name = "notifybar";
             this.notifybar.Size = new System.Drawing.Size(95, 17);
             this.notifybar.Text = "Notification area";
             // 
-            // btnTXneg
-            // 
-            this.btnTXneg.Location = new System.Drawing.Point(11, 102);
-            this.btnTXneg.Margin = new System.Windows.Forms.Padding(1);
-            this.btnTXneg.Name = "btnTXneg";
-            this.btnTXneg.Size = new System.Drawing.Size(60, 25);
-            this.btnTXneg.TabIndex = 49;
-            this.btnTXneg.Text = "X-";
-            this.btnTXneg.UseVisualStyleBackColor = true;
-            this.btnTXneg.Click += new System.EventHandler(this.btnTXneg_Click);
-            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(516, 11);
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(516, 12);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(145, 54);
+            this.button4.Size = new System.Drawing.Size(145, 202);
             this.button4.TabIndex = 73;
             this.button4.Text = "Load RoboDK API";
             this.button4.UseVisualStyleBackColor = true;
@@ -754,6 +776,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1311, 936);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.statusStrip1);
@@ -762,10 +785,6 @@
             this.Controls.Add(this.groupIncrementalMove);
             this.Controls.Add(this.btnRunTestProgram);
             this.Controls.Add(this.btnSelectStation);
-            this.Controls.Add(this.btnRun_Program);
-            this.Controls.Add(this.txtRunProgram);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnSelectRobot);
             this.Controls.Add(this.btnMoveJoints);
             this.Controls.Add(this.txtJoints);
             this.Controls.Add(this.label5);
@@ -859,10 +878,6 @@
         private System.Windows.Forms.Button btnRXpos;
         private System.Windows.Forms.Button btnRunTestProgram;
         private System.Windows.Forms.Button btnSelectStation;
-        private System.Windows.Forms.Button btnRun_Program;
-        private System.Windows.Forms.TextBox txtRunProgram;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnSelectRobot;
         private System.Windows.Forms.Button btnMoveJoints;
         private System.Windows.Forms.TextBox txtJoints;
         private System.Windows.Forms.Label label5;
