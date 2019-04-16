@@ -22,6 +22,15 @@ namespace Lotus
         {
             InitializeComponent();
         }
+
+        int unloadingX;
+        int unloadingY;
+        int unloadingZ;
+
+        int altitude;
+
+        int objectsLevel;
+
         private FilterInfoCollection videoDevices;
         public VideoCaptureDevice videoDevice;
         private VideoCapabilities[] videoCapabilities;
@@ -32,17 +41,34 @@ namespace Lotus
         RoboDK RDK = null;
 
         // Keep the ROBOT item as a global variable
-        RoboDK.Item ROBOT = null;
+        public RoboDK.Item ROBOT = null;
 
         // Define if the robot movements will be blocking
         const bool MOVE_BLOCKING = false;
 
         Point sheetPoseInRCS;
         Size sheetSize;
+
+        public RoboDK.Item item;
+        private void button5_Click(object sender, EventArgs e)
+        {
+            unloadingX = Convert.ToInt32(textBox1.Text);
+            unloadingY = Convert.ToInt32(textBox2.Text);
+            unloadingZ = Convert.ToInt32(textBox3.Text);
+
+            altitude = Convert.ToInt32(textBox4.Text);
+
+            objectsLevel = Convert.ToInt32(textBox5.Text);
+
+            sheetPoseInRCS = new Point(Convert.ToInt32(textBox7.Text), Convert.ToInt32(textBox8.Text));
+            sheetSize = new Size(Convert.ToInt32(textBox10.Text), Convert.ToInt32(textBox9.Text));
+
+           // notifybar.Text = RobotControl.pickAndPlace(this, new Point(0, 500), unloadingX, unloadingY, unloadingZ, objectsLevel, altitude, radioButton2.Checked);
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
-            sheetPoseInRCS = new Point(300, -200);
-            sheetSize = new Size(400, 200);
+            //  sheetPoseInRCS = new Point(300, -200);
+            //  sheetSize = new Size(400, 200);
             // This will create a new icon in the windows toolbar that shows how we can lock/unlock the application
             Setup_Notification_Icon();
 
@@ -70,6 +96,7 @@ namespace Lotus
             {
                 work_zone_points.Add(new Point(Convert.ToInt32(line.Split(' ')[1].Split(';')[0]), Convert.ToInt32(line.Split(' ')[1].Split(';')[1])));
             }
+            button5_Click(null, null);
         }
 
 
@@ -109,20 +136,6 @@ namespace Lotus
             RDK.setSimulationSpeed(1);
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (pictureBox1.Image != null)
-            {
-
-                pictureBox1.Image.Save("background.bmp");
-            }
-            else
-            {
-                MessageBox.Show("Get the background first!");
-            }
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Recognition1 recognition = new Recognition1("mask.bmp");
@@ -147,19 +160,23 @@ namespace Lotus
             Point pointInRCS = convertToRobotCoordinateSystem(point);
             g.DrawString("x = " + pointInRCS.X.ToString() + "mm ( " + point.X + "px )", new Font("Gotic", 15), Brushes.Red, 10, 50);
             g.DrawString("y = " + pointInRCS.Y.ToString() + "mm ( " + point.Y + "px )", new Font("Gotic", 15), Brushes.Red, 10, 70);
+
+            var toDelete = RDK.getItem("object.sld");
+            toDelete.Delete();
+
             if (Check_RDK())
             {
-                RoboDK.Item box = RDK.AddFile("box.sld");
-                box.Scale(new double[3] { 0.3, 0.3, 0.3 });
-                box.setPose(Mat.FromXYZRPW(new double[6] { pointInRCS.X, pointInRCS.Y, 18, 90, 0, 0 }));
+                item = RDK.AddFile("object.sld");
+                item.Scale(new double[3] { 0.3, 0.3, 0.3 });
+                item.setPose(Mat.FromXYZRPW(new double[6] { pointInRCS.X, pointInRCS.Y, 18, 90, 0, 0 }));
 
                 ////////////////////////////////////
                 ///////  MOVE TO THE OBJECT    ////
                 ///////////////////////////////////
 
-                RobotControl.pickAndPlace(this, pointInRCS, new Point(500, 0), 40, 300);
+                notifybar.Text =RobotControl.pickAndPlace(this, pointInRCS, unloadingX, unloadingY, unloadingZ, objectsLevel, altitude, radioButton2.Checked);
 
-                box.setPose(Mat.FromXYZRPW(new double[6] { 500, 0, 18, 90, 0, 0 }));
+                item.setPose(Mat.FromXYZRPW(new double[6] { unloadingX, unloadingY, unloadingZ + 18, 90, 0, 0 }));
             }
         }
 
@@ -174,10 +191,7 @@ namespace Lotus
         //////////////////////////////////////////////////////////////////
         ////////// Test button for general purpose tests ///////////////////////
 
-        public void moveToPoint(double x, double y, double z, double a, double b, double c)
-        {
-            ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { x, y, z, a, b, c }));
-        }
+
 
         private void btnRunTestProgram_Click(object sender, EventArgs e)
         {
@@ -578,7 +592,7 @@ namespace Lotus
 
             // update the joints
             string strjoints = Values_2_String(joints);
-            txtJoints.Text = strjoints;
+            textBox6.Text = strjoints;
 
             // update the pose as xyzwpr
             double[] xyzwpr = pose.ToTxyzRxyz();
@@ -586,24 +600,6 @@ namespace Lotus
             txtPosition.Text = strpose;
         }
 
-        private void btnMoveJoints_Click(object sender, EventArgs e)
-        {
-            // retrieve the robot joints from the text and validate input
-            double[] joints = String_2_Values(txtJoints.Text);
-
-            // make sure RDK is running and we have a valid input
-            if (!Check_ROBOT() || joints == null) { return; }
-
-            try
-            {
-                ROBOT.MoveJ(joints, MOVE_BLOCKING);
-            }
-            catch (RoboDK.RDKException rdkex)
-            {
-                notifybar.Text = "Problems moving the robot: " + rdkex.Message;
-                //MessageBox.Show("The robot can't move to " + new_pose.ToString());
-            }
-        }
 
         private void btnMovePose_Click(object sender, EventArgs e)
         {
@@ -1515,6 +1511,23 @@ namespace Lotus
         }
 
         private void panel_rdk_Paint(object sender, PaintEventArgs e)
+        {
+            button4_Click(null, null);
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            radioButton1.Checked = !radioButton2.Checked;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            radioButton2.Checked = !radioButton1.Checked;
+        }
+
+
+
+        private void label15_Click(object sender, EventArgs e)
         {
 
         }

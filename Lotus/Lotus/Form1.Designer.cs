@@ -41,7 +41,6 @@
             this.devicesCombo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -60,7 +59,6 @@
             this.lblstepIncrement = new System.Windows.Forms.Label();
             this.rad_Move_Joints = new System.Windows.Forms.RadioButton();
             this.rad_Move_wrt_Tool = new System.Windows.Forms.RadioButton();
-            this.rad_Move_wrt_Reference = new System.Windows.Forms.RadioButton();
             this.btnTXpos = new System.Windows.Forms.Button();
             this.btnTYneg = new System.Windows.Forms.Button();
             this.btnTYpos = new System.Windows.Forms.Button();
@@ -74,9 +72,6 @@
             this.btnRXpos = new System.Windows.Forms.Button();
             this.btnRunTestProgram = new System.Windows.Forms.Button();
             this.btnSelectStation = new System.Windows.Forms.Button();
-            this.btnMoveJoints = new System.Windows.Forms.Button();
-            this.txtJoints = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnMovePose = new System.Windows.Forms.Button();
             this.btnGetJoints = new System.Windows.Forms.Button();
             this.txtPosition = new System.Windows.Forms.TextBox();
@@ -85,6 +80,34 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.notifybar = new System.Windows.Forms.ToolStripStatusLabel();
             this.button4 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -95,17 +118,18 @@
             this.groupIncrementalMove.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numStep)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // triggerButton
             // 
             this.triggerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.triggerButton.ForeColor = System.Drawing.Color.White;
-            this.triggerButton.Location = new System.Drawing.Point(435, 72);
+            this.triggerButton.Location = new System.Drawing.Point(5, 72);
             this.triggerButton.Name = "triggerButton";
-            this.triggerButton.Size = new System.Drawing.Size(75, 23);
+            this.triggerButton.Size = new System.Drawing.Size(505, 23);
             this.triggerButton.TabIndex = 19;
-            this.triggerButton.Text = "&Trigger";
+            this.triggerButton.Text = "Trigger";
             this.triggerButton.UseVisualStyleBackColor = true;
             this.triggerButton.Click += new System.EventHandler(this.triggerButton_Click);
             // 
@@ -136,11 +160,11 @@
             // 
             this.disconnectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.disconnectButton.ForeColor = System.Drawing.Color.White;
-            this.disconnectButton.Location = new System.Drawing.Point(435, 42);
+            this.disconnectButton.Location = new System.Drawing.Point(408, 42);
             this.disconnectButton.Name = "disconnectButton";
-            this.disconnectButton.Size = new System.Drawing.Size(75, 23);
+            this.disconnectButton.Size = new System.Drawing.Size(102, 23);
             this.disconnectButton.TabIndex = 17;
-            this.disconnectButton.Text = "&Disconnect";
+            this.disconnectButton.Text = "Disconnect";
             this.disconnectButton.UseVisualStyleBackColor = true;
             this.disconnectButton.Click += new System.EventHandler(this.disconnectButton_Click);
             // 
@@ -148,11 +172,11 @@
             // 
             this.connectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.connectButton.ForeColor = System.Drawing.Color.White;
-            this.connectButton.Location = new System.Drawing.Point(435, 12);
+            this.connectButton.Location = new System.Drawing.Point(408, 12);
             this.connectButton.Name = "connectButton";
-            this.connectButton.Size = new System.Drawing.Size(75, 23);
+            this.connectButton.Size = new System.Drawing.Size(102, 23);
             this.connectButton.TabIndex = 16;
-            this.connectButton.Text = "&Connect";
+            this.connectButton.Text = "Connect";
             this.connectButton.UseVisualStyleBackColor = true;
             this.connectButton.Click += new System.EventHandler(this.connectButton_Click);
             // 
@@ -160,7 +184,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(210, 45);
+            this.label3.Location = new System.Drawing.Point(197, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 13);
             this.label3.TabIndex = 15;
@@ -170,7 +194,7 @@
             // 
             this.snapshotResolutionsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.snapshotResolutionsCombo.FormattingEnabled = true;
-            this.snapshotResolutionsCombo.Location = new System.Drawing.Point(315, 42);
+            this.snapshotResolutionsCombo.Location = new System.Drawing.Point(302, 42);
             this.snapshotResolutionsCombo.Name = "snapshotResolutionsCombo";
             this.snapshotResolutionsCombo.Size = new System.Drawing.Size(100, 21);
             this.snapshotResolutionsCombo.TabIndex = 14;
@@ -179,7 +203,7 @@
             // 
             this.videoResolutionsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.videoResolutionsCombo.FormattingEnabled = true;
-            this.videoResolutionsCombo.Location = new System.Drawing.Point(100, 42);
+            this.videoResolutionsCombo.Location = new System.Drawing.Point(87, 42);
             this.videoResolutionsCombo.Name = "videoResolutionsCombo";
             this.videoResolutionsCombo.Size = new System.Drawing.Size(100, 21);
             this.videoResolutionsCombo.TabIndex = 13;
@@ -188,7 +212,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(15, 45);
+            this.label2.Location = new System.Drawing.Point(2, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 12;
@@ -198,7 +222,7 @@
             // 
             this.devicesCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.devicesCombo.FormattingEnabled = true;
-            this.devicesCombo.Location = new System.Drawing.Point(100, 12);
+            this.devicesCombo.Location = new System.Drawing.Point(87, 12);
             this.devicesCombo.Name = "devicesCombo";
             this.devicesCombo.Size = new System.Drawing.Size(315, 21);
             this.devicesCombo.TabIndex = 11;
@@ -208,7 +232,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(15, 15);
+            this.label1.Location = new System.Drawing.Point(2, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 10;
@@ -224,18 +248,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(516, 220);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 54);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Save bachground";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
@@ -250,9 +262,9 @@
             this.button2.Enabled = false;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(516, 280);
+            this.button2.Location = new System.Drawing.Point(520, 337);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(145, 54);
+            this.button2.Size = new System.Drawing.Size(145, 57);
             this.button2.TabIndex = 23;
             this.button2.Text = "Recognize";
             this.button2.UseVisualStyleBackColor = true;
@@ -294,9 +306,9 @@
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(516, 340);
+            this.button3.Location = new System.Drawing.Point(519, 293);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(145, 54);
+            this.button3.Size = new System.Drawing.Size(145, 38);
             this.button3.TabIndex = 25;
             this.button3.Text = "Set work zone";
             this.button3.UseVisualStyleBackColor = true;
@@ -306,7 +318,7 @@
             // 
             this.btnMoveRobotHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMoveRobotHome.ForeColor = System.Drawing.Color.White;
-            this.btnMoveRobotHome.Location = new System.Drawing.Point(811, 13);
+            this.btnMoveRobotHome.Location = new System.Drawing.Point(659, 12);
             this.btnMoveRobotHome.Name = "btnMoveRobotHome";
             this.btnMoveRobotHome.Size = new System.Drawing.Size(131, 54);
             this.btnMoveRobotHome.TabIndex = 70;
@@ -321,7 +333,7 @@
             this.groupRunMode.Controls.Add(this.rad_RunMode_Online);
             this.groupRunMode.Controls.Add(this.rad_RunMode_Program);
             this.groupRunMode.ForeColor = System.Drawing.Color.White;
-            this.groupRunMode.Location = new System.Drawing.Point(671, 72);
+            this.groupRunMode.Location = new System.Drawing.Point(519, 71);
             this.groupRunMode.Name = "groupRunMode";
             this.groupRunMode.Size = new System.Drawing.Size(271, 77);
             this.groupRunMode.TabIndex = 69;
@@ -383,7 +395,6 @@
             this.groupIncrementalMove.Controls.Add(this.lblstepIncrement);
             this.groupIncrementalMove.Controls.Add(this.rad_Move_Joints);
             this.groupIncrementalMove.Controls.Add(this.rad_Move_wrt_Tool);
-            this.groupIncrementalMove.Controls.Add(this.rad_Move_wrt_Reference);
             this.groupIncrementalMove.Controls.Add(this.btnTXpos);
             this.groupIncrementalMove.Controls.Add(this.btnTYneg);
             this.groupIncrementalMove.Controls.Add(this.btnTYpos);
@@ -396,9 +407,9 @@
             this.groupIncrementalMove.Controls.Add(this.btnRYneg);
             this.groupIncrementalMove.Controls.Add(this.btnRXpos);
             this.groupIncrementalMove.ForeColor = System.Drawing.Color.White;
-            this.groupIncrementalMove.Location = new System.Drawing.Point(948, 10);
+            this.groupIncrementalMove.Location = new System.Drawing.Point(796, 9);
             this.groupIncrementalMove.Name = "groupIncrementalMove";
-            this.groupIncrementalMove.Size = new System.Drawing.Size(351, 237);
+            this.groupIncrementalMove.Size = new System.Drawing.Size(144, 237);
             this.groupIncrementalMove.TabIndex = 68;
             this.groupIncrementalMove.TabStop = false;
             this.groupIncrementalMove.Text = "Incremental Move";
@@ -407,7 +418,7 @@
             // 
             this.btnTXneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTXneg.ForeColor = System.Drawing.Color.White;
-            this.btnTXneg.Location = new System.Drawing.Point(175, 10);
+            this.btnTXneg.Location = new System.Drawing.Point(4, 77);
             this.btnTXneg.Margin = new System.Windows.Forms.Padding(1);
             this.btnTXneg.Name = "btnTXneg";
             this.btnTXneg.Size = new System.Drawing.Size(67, 23);
@@ -424,21 +435,21 @@
             0,
             0,
             0});
-            this.numStep.Location = new System.Drawing.Point(73, 77);
+            this.numStep.Location = new System.Drawing.Point(73, 53);
             this.numStep.Maximum = new decimal(new int[] {
             2000,
             0,
             0,
             0});
             this.numStep.Name = "numStep";
-            this.numStep.Size = new System.Drawing.Size(70, 20);
+            this.numStep.Size = new System.Drawing.Size(67, 20);
             this.numStep.TabIndex = 48;
             // 
             // lblstepIncrement
             // 
             this.lblstepIncrement.AutoSize = true;
             this.lblstepIncrement.ForeColor = System.Drawing.Color.White;
-            this.lblstepIncrement.Location = new System.Drawing.Point(6, 81);
+            this.lblstepIncrement.Location = new System.Drawing.Point(10, 60);
             this.lblstepIncrement.Name = "lblstepIncrement";
             this.lblstepIncrement.Size = new System.Drawing.Size(57, 13);
             this.lblstepIncrement.TabIndex = 47;
@@ -448,7 +459,7 @@
             // 
             this.rad_Move_Joints.AutoSize = true;
             this.rad_Move_Joints.ForeColor = System.Drawing.Color.White;
-            this.rad_Move_Joints.Location = new System.Drawing.Point(11, 57);
+            this.rad_Move_Joints.Location = new System.Drawing.Point(6, 33);
             this.rad_Move_Joints.Name = "rad_Move_Joints";
             this.rad_Move_Joints.Size = new System.Drawing.Size(77, 17);
             this.rad_Move_Joints.TabIndex = 2;
@@ -461,7 +472,7 @@
             // 
             this.rad_Move_wrt_Tool.AutoSize = true;
             this.rad_Move_wrt_Tool.ForeColor = System.Drawing.Color.White;
-            this.rad_Move_wrt_Tool.Location = new System.Drawing.Point(11, 37);
+            this.rad_Move_wrt_Tool.Location = new System.Drawing.Point(6, 16);
             this.rad_Move_wrt_Tool.Name = "rad_Move_wrt_Tool";
             this.rad_Move_wrt_Tool.Size = new System.Drawing.Size(46, 17);
             this.rad_Move_wrt_Tool.TabIndex = 1;
@@ -470,24 +481,11 @@
             this.rad_Move_wrt_Tool.UseVisualStyleBackColor = true;
             this.rad_Move_wrt_Tool.CheckedChanged += new System.EventHandler(this.rad_Move_wrt_Tool_CheckedChanged);
             // 
-            // rad_Move_wrt_Reference
-            // 
-            this.rad_Move_wrt_Reference.AutoSize = true;
-            this.rad_Move_wrt_Reference.ForeColor = System.Drawing.Color.White;
-            this.rad_Move_wrt_Reference.Location = new System.Drawing.Point(11, 17);
-            this.rad_Move_wrt_Reference.Name = "rad_Move_wrt_Reference";
-            this.rad_Move_wrt_Reference.Size = new System.Drawing.Size(75, 17);
-            this.rad_Move_wrt_Reference.TabIndex = 0;
-            this.rad_Move_wrt_Reference.TabStop = true;
-            this.rad_Move_wrt_Reference.Text = "Reference";
-            this.rad_Move_wrt_Reference.UseVisualStyleBackColor = true;
-            this.rad_Move_wrt_Reference.CheckedChanged += new System.EventHandler(this.rad_Move_wrt_Reference_CheckedChanged);
-            // 
             // btnTXpos
             // 
             this.btnTXpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTXpos.ForeColor = System.Drawing.Color.White;
-            this.btnTXpos.Location = new System.Drawing.Point(271, 10);
+            this.btnTXpos.Location = new System.Drawing.Point(73, 77);
             this.btnTXpos.Margin = new System.Windows.Forms.Padding(1);
             this.btnTXpos.Name = "btnTXpos";
             this.btnTXpos.Size = new System.Drawing.Size(67, 23);
@@ -500,7 +498,7 @@
             // 
             this.btnTYneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTYneg.ForeColor = System.Drawing.Color.White;
-            this.btnTYneg.Location = new System.Drawing.Point(174, 50);
+            this.btnTYneg.Location = new System.Drawing.Point(4, 104);
             this.btnTYneg.Margin = new System.Windows.Forms.Padding(1);
             this.btnTYneg.Name = "btnTYneg";
             this.btnTYneg.Size = new System.Drawing.Size(67, 23);
@@ -513,7 +511,7 @@
             // 
             this.btnTYpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTYpos.ForeColor = System.Drawing.Color.White;
-            this.btnTYpos.Location = new System.Drawing.Point(271, 50);
+            this.btnTYpos.Location = new System.Drawing.Point(73, 104);
             this.btnTYpos.Margin = new System.Windows.Forms.Padding(1);
             this.btnTYpos.Name = "btnTYpos";
             this.btnTYpos.Size = new System.Drawing.Size(67, 23);
@@ -526,7 +524,7 @@
             // 
             this.btnRZpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRZpos.ForeColor = System.Drawing.Color.White;
-            this.btnRZpos.Location = new System.Drawing.Point(271, 210);
+            this.btnRZpos.Location = new System.Drawing.Point(73, 208);
             this.btnRZpos.Margin = new System.Windows.Forms.Padding(1);
             this.btnRZpos.Name = "btnRZpos";
             this.btnRZpos.Size = new System.Drawing.Size(67, 23);
@@ -539,7 +537,7 @@
             // 
             this.btnTZneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTZneg.ForeColor = System.Drawing.Color.White;
-            this.btnTZneg.Location = new System.Drawing.Point(174, 90);
+            this.btnTZneg.Location = new System.Drawing.Point(4, 130);
             this.btnTZneg.Margin = new System.Windows.Forms.Padding(1);
             this.btnTZneg.Name = "btnTZneg";
             this.btnTZneg.Size = new System.Drawing.Size(67, 23);
@@ -552,7 +550,7 @@
             // 
             this.btnRZneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRZneg.ForeColor = System.Drawing.Color.White;
-            this.btnRZneg.Location = new System.Drawing.Point(174, 210);
+            this.btnRZneg.Location = new System.Drawing.Point(4, 208);
             this.btnRZneg.Margin = new System.Windows.Forms.Padding(1);
             this.btnRZneg.Name = "btnRZneg";
             this.btnRZneg.Size = new System.Drawing.Size(67, 23);
@@ -565,7 +563,7 @@
             // 
             this.btnTZpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTZpos.ForeColor = System.Drawing.Color.White;
-            this.btnTZpos.Location = new System.Drawing.Point(271, 90);
+            this.btnTZpos.Location = new System.Drawing.Point(73, 129);
             this.btnTZpos.Margin = new System.Windows.Forms.Padding(1);
             this.btnTZpos.Name = "btnTZpos";
             this.btnTZpos.Size = new System.Drawing.Size(67, 23);
@@ -578,7 +576,7 @@
             // 
             this.btnRYpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRYpos.ForeColor = System.Drawing.Color.White;
-            this.btnRYpos.Location = new System.Drawing.Point(271, 170);
+            this.btnRYpos.Location = new System.Drawing.Point(73, 183);
             this.btnRYpos.Margin = new System.Windows.Forms.Padding(1);
             this.btnRYpos.Name = "btnRYpos";
             this.btnRYpos.Size = new System.Drawing.Size(67, 23);
@@ -591,7 +589,7 @@
             // 
             this.btnRXneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRXneg.ForeColor = System.Drawing.Color.White;
-            this.btnRXneg.Location = new System.Drawing.Point(174, 130);
+            this.btnRXneg.Location = new System.Drawing.Point(4, 158);
             this.btnRXneg.Margin = new System.Windows.Forms.Padding(1);
             this.btnRXneg.Name = "btnRXneg";
             this.btnRXneg.Size = new System.Drawing.Size(67, 23);
@@ -604,7 +602,7 @@
             // 
             this.btnRYneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRYneg.ForeColor = System.Drawing.Color.White;
-            this.btnRYneg.Location = new System.Drawing.Point(174, 170);
+            this.btnRYneg.Location = new System.Drawing.Point(4, 183);
             this.btnRYneg.Margin = new System.Windows.Forms.Padding(1);
             this.btnRYneg.Name = "btnRYneg";
             this.btnRYneg.Size = new System.Drawing.Size(67, 23);
@@ -617,7 +615,7 @@
             // 
             this.btnRXpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRXpos.ForeColor = System.Drawing.Color.White;
-            this.btnRXpos.Location = new System.Drawing.Point(271, 130);
+            this.btnRXpos.Location = new System.Drawing.Point(73, 158);
             this.btnRXpos.Margin = new System.Windows.Forms.Padding(1);
             this.btnRXpos.Name = "btnRXpos";
             this.btnRXpos.Size = new System.Drawing.Size(67, 23);
@@ -630,7 +628,7 @@
             // 
             this.btnRunTestProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunTestProgram.ForeColor = System.Drawing.Color.White;
-            this.btnRunTestProgram.Location = new System.Drawing.Point(671, 45);
+            this.btnRunTestProgram.Location = new System.Drawing.Point(519, 44);
             this.btnRunTestProgram.Name = "btnRunTestProgram";
             this.btnRunTestProgram.Size = new System.Drawing.Size(136, 22);
             this.btnRunTestProgram.TabIndex = 65;
@@ -642,7 +640,7 @@
             // 
             this.btnSelectStation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelectStation.ForeColor = System.Drawing.Color.White;
-            this.btnSelectStation.Location = new System.Drawing.Point(671, 13);
+            this.btnSelectStation.Location = new System.Drawing.Point(519, 12);
             this.btnSelectStation.Margin = new System.Windows.Forms.Padding(1);
             this.btnSelectStation.Name = "btnSelectStation";
             this.btnSelectStation.Size = new System.Drawing.Size(136, 28);
@@ -651,47 +649,14 @@
             this.btnSelectStation.UseVisualStyleBackColor = true;
             this.btnSelectStation.Click += new System.EventHandler(this.btnLoadFile_Click);
             // 
-            // btnMoveJoints
-            // 
-            this.btnMoveJoints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMoveJoints.ForeColor = System.Drawing.Color.White;
-            this.btnMoveJoints.Location = new System.Drawing.Point(841, 153);
-            this.btnMoveJoints.Margin = new System.Windows.Forms.Padding(1);
-            this.btnMoveJoints.Name = "btnMoveJoints";
-            this.btnMoveJoints.Size = new System.Drawing.Size(101, 21);
-            this.btnMoveJoints.TabIndex = 59;
-            this.btnMoveJoints.Text = "Move to Joints";
-            this.btnMoveJoints.UseVisualStyleBackColor = true;
-            this.btnMoveJoints.Click += new System.EventHandler(this.btnMoveJoints_Click);
-            // 
-            // txtJoints
-            // 
-            this.txtJoints.Location = new System.Drawing.Point(751, 175);
-            this.txtJoints.Margin = new System.Windows.Forms.Padding(1);
-            this.txtJoints.Name = "txtJoints";
-            this.txtJoints.Size = new System.Drawing.Size(191, 20);
-            this.txtJoints.TabIndex = 58;
-            this.txtJoints.Text = "90 , -90 , 90 , 90 , 90 , -90";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(748, 157);
-            this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 13);
-            this.label5.TabIndex = 57;
-            this.label5.Text = "Joint Values";
-            // 
             // btnMovePose
             // 
             this.btnMovePose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMovePose.ForeColor = System.Drawing.Color.White;
-            this.btnMovePose.Location = new System.Drawing.Point(841, 204);
+            this.btnMovePose.Location = new System.Drawing.Point(519, 152);
             this.btnMovePose.Margin = new System.Windows.Forms.Padding(1);
             this.btnMovePose.Name = "btnMovePose";
-            this.btnMovePose.Size = new System.Drawing.Size(101, 21);
+            this.btnMovePose.Size = new System.Drawing.Size(75, 38);
             this.btnMovePose.TabIndex = 56;
             this.btnMovePose.Text = "Move to Position";
             this.btnMovePose.UseVisualStyleBackColor = true;
@@ -701,10 +666,10 @@
             // 
             this.btnGetJoints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGetJoints.ForeColor = System.Drawing.Color.White;
-            this.btnGetJoints.Location = new System.Drawing.Point(671, 154);
+            this.btnGetJoints.Location = new System.Drawing.Point(519, 192);
             this.btnGetJoints.Margin = new System.Windows.Forms.Padding(1);
             this.btnGetJoints.Name = "btnGetJoints";
-            this.btnGetJoints.Size = new System.Drawing.Size(75, 93);
+            this.btnGetJoints.Size = new System.Drawing.Size(75, 54);
             this.btnGetJoints.TabIndex = 55;
             this.btnGetJoints.Text = "Read Current Position";
             this.btnGetJoints.UseVisualStyleBackColor = true;
@@ -712,7 +677,7 @@
             // 
             // txtPosition
             // 
-            this.txtPosition.Location = new System.Drawing.Point(751, 227);
+            this.txtPosition.Location = new System.Drawing.Point(601, 170);
             this.txtPosition.Margin = new System.Windows.Forms.Padding(1);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(191, 20);
@@ -722,13 +687,14 @@
             // lblJ1
             // 
             this.lblJ1.AutoSize = true;
+            this.lblJ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblJ1.ForeColor = System.Drawing.Color.White;
-            this.lblJ1.Location = new System.Drawing.Point(748, 208);
+            this.lblJ1.Location = new System.Drawing.Point(656, 151);
             this.lblJ1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblJ1.Name = "lblJ1";
-            this.lblJ1.Size = new System.Drawing.Size(91, 13);
+            this.lblJ1.Size = new System.Drawing.Size(74, 15);
             this.lblJ1.TabIndex = 53;
-            this.lblJ1.Text = "Cartesian Position";
+            this.lblJ1.Text = "x, y, z, a, b, c";
             // 
             // panel_rdk
             // 
@@ -764,13 +730,332 @@
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(516, 12);
+            this.button4.Location = new System.Drawing.Point(519, 253);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(145, 202);
+            this.button4.Size = new System.Drawing.Size(146, 34);
             this.button4.TabIndex = 73;
             this.button4.Text = "Load RoboDK API";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.textBox10);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(958, 14);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(341, 232);
+            this.groupBox1.TabIndex = 74;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Path and environment properties";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(184, 120);
+            this.label11.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(68, 13);
+            this.label11.TabIndex = 84;
+            this.label11.Text = "Objects level";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(254, 117);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(74, 20);
+            this.textBox5.TabIndex = 83;
+            this.textBox5.Text = "40";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.ForeColor = System.Drawing.Color.White;
+            this.radioButton2.Location = new System.Drawing.Point(268, 161);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(60, 17);
+            this.radioButton2.TabIndex = 82;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Vertical";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(208, 145);
+            this.label10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 13);
+            this.label10.TabIndex = 81;
+            this.label10.Text = "Gripper orientation";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.ForeColor = System.Drawing.Color.White;
+            this.radioButton1.Location = new System.Drawing.Point(180, 161);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(72, 17);
+            this.radioButton1.TabIndex = 80;
+            this.radioButton1.Text = "Horizontal";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // button5
+            // 
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(6, 184);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(331, 42);
+            this.button5.TabIndex = 75;
+            this.button5.Text = "Set";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(210, 95);
+            this.label9.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 13);
+            this.label9.TabIndex = 79;
+            this.label9.Text = "Altitude";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(155, 48);
+            this.label8.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 13);
+            this.label8.TabIndex = 78;
+            this.label8.Text = "Unloading point";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(238, 70);
+            this.label7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(14, 13);
+            this.label7.TabIndex = 77;
+            this.label7.Text = "Z";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(238, 45);
+            this.label6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(14, 13);
+            this.label6.TabIndex = 76;
+            this.label6.Text = "Y";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(238, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(14, 13);
+            this.label4.TabIndex = 75;
+            this.label4.Text = "X";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(254, 92);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(74, 20);
+            this.textBox4.TabIndex = 62;
+            this.textBox4.Text = "300";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(254, 67);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(74, 20);
+            this.textBox3.TabIndex = 61;
+            this.textBox3.Text = "40";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(254, 42);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(74, 20);
+            this.textBox2.TabIndex = 60;
+            this.textBox2.Text = "0";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(254, 17);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(74, 20);
+            this.textBox1.TabIndex = 59;
+            this.textBox1.Text = "500";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(601, 226);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(191, 20);
+            this.textBox6.TabIndex = 75;
+            this.textBox6.Text = "0 , -90 , 90 , 0 , 90 , 90";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(636, 210);
+            this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 15);
+            this.label5.TabIndex = 76;
+            this.label5.Text = "A1, A2, A3, A4, A5, A6";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(16, 41);
+            this.label12.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(61, 13);
+            this.label12.TabIndex = 85;
+            this.label12.Text = "Sheet pose";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(85, 23);
+            this.label13.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(14, 13);
+            this.label13.TabIndex = 86;
+            this.label13.Text = "X";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(101, 20);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(49, 20);
+            this.textBox7.TabIndex = 87;
+            this.textBox7.Text = "300";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(85, 53);
+            this.label14.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(14, 13);
+            this.label14.TabIndex = 89;
+            this.label14.Text = "Y";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(101, 50);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(49, 20);
+            this.textBox8.TabIndex = 88;
+            this.textBox8.Text = "-200";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(82, 146);
+            this.label15.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(38, 13);
+            this.label15.TabIndex = 94;
+            this.label15.Text = "Height";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(121, 142);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(29, 20);
+            this.textBox9.TabIndex = 93;
+            this.textBox9.Text = "200";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(121, 112);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(29, 20);
+            this.textBox10.TabIndex = 92;
+            this.textBox10.Text = "400";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(82, 115);
+            this.label16.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(35, 13);
+            this.label16.TabIndex = 91;
+            this.label16.Text = "Width";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(16, 130);
+            this.label17.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(56, 13);
+            this.label17.TabIndex = 90;
+            this.label17.Text = "Sheet size";
             // 
             // Form1
             // 
@@ -778,6 +1063,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1311, 936);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnMoveRobotHome);
@@ -785,9 +1074,6 @@
             this.Controls.Add(this.groupIncrementalMove);
             this.Controls.Add(this.btnRunTestProgram);
             this.Controls.Add(this.btnSelectStation);
-            this.Controls.Add(this.btnMoveJoints);
-            this.Controls.Add(this.txtJoints);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnMovePose);
             this.Controls.Add(this.btnGetJoints);
             this.Controls.Add(this.txtPosition);
@@ -795,8 +1081,6 @@
             this.Controls.Add(this.panel_rdk);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.triggerButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.disconnectButton);
@@ -826,6 +1110,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numStep)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -845,7 +1131,6 @@
         private System.Windows.Forms.Label label1;
         private AForge.Controls.VideoSourcePlayer videoSourcePlayer;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TabControl tabControl1;
@@ -864,7 +1149,6 @@
         private System.Windows.Forms.Label lblstepIncrement;
         private System.Windows.Forms.RadioButton rad_Move_Joints;
         private System.Windows.Forms.RadioButton rad_Move_wrt_Tool;
-        private System.Windows.Forms.RadioButton rad_Move_wrt_Reference;
         private System.Windows.Forms.Button btnTXpos;
         private System.Windows.Forms.Button btnTYneg;
         private System.Windows.Forms.Button btnTYpos;
@@ -878,9 +1162,6 @@
         private System.Windows.Forms.Button btnRXpos;
         private System.Windows.Forms.Button btnRunTestProgram;
         private System.Windows.Forms.Button btnSelectStation;
-        private System.Windows.Forms.Button btnMoveJoints;
-        private System.Windows.Forms.TextBox txtJoints;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnMovePose;
         private System.Windows.Forms.Button btnGetJoints;
         private System.Windows.Forms.TextBox txtPosition;
@@ -890,6 +1171,34 @@
         private System.Windows.Forms.ToolStripStatusLabel notifybar;
         private System.Windows.Forms.Button btnTXneg;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }
 
