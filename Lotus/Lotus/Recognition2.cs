@@ -11,7 +11,7 @@ namespace Lotus
         public FastBitmap background;
         public Color backAVG;
 
-        double delta = 150;
+        double delta = 170;
         int objectSize;
         public Recognition2(string background, int objectSize)
         {
@@ -90,6 +90,8 @@ namespace Lotus
             background.UnlockBitmap();
             bitmap.UnlockBitmap();
 
+
+
             for (int i = 0; i < someShit.Count; i++)
             {
                 if (objectsMasks.Count == 0)
@@ -131,28 +133,30 @@ namespace Lotus
                                 objectsMasks.Last().Add(someShit[j]);
                             }
                         }
+
+
+
+                        if (objectsMasks.Count > 0)
+                            if (objectsMasks.Last().Count < objectSize)
+                            {
+                                objectsMasks.RemoveAt(objectsMasks.Count - 1);
+                            }
+                            else
+                            {
+                                double X_sum = 0;
+                                double Y_sum = 0;
+                                for (int j = 0; j < objectsMasks.Last().Count; j++)
+                                {
+                                    X_sum += objectsMasks.Last()[j].X;
+                                    Y_sum += objectsMasks.Last()[j].Y;
+                                }
+
+                                double X = X_sum / objectsMasks.Last().Count;
+                                double Y = Y_sum / objectsMasks.Last().Count;
+                                objects.Add(new Point(Convert.ToInt32(X), Convert.ToInt32(Y)));
+                            }
                     }
                 }
-
-                if (objectsMasks.Count > 0)
-                    if (objectsMasks.Last().Count < objectSize)
-                    {
-                        objectsMasks.RemoveAt(objectsMasks.Count - 1);
-                    }
-                    else
-                    {
-                        double X_sum = 0;
-                        double Y_sum = 0;
-                        for (int j = 0; j < objectsMasks.Last().Count; j++)
-                        {
-                            X_sum += objectsMasks.Last()[j].X;
-                            Y_sum += objectsMasks.Last()[j].Y;
-                        }
-
-                        double X = X_sum / objectsMasks.Last().Count;
-                        double Y = Y_sum / objectsMasks.Last().Count;
-                        objects.Add(new Point(Convert.ToInt32(X), Convert.ToInt32(Y)));
-                    }
             }
 
             return objects;

@@ -50,7 +50,7 @@ namespace Lotus
         Point sheetPoseInRCS;
         Size sheetSize;
         List<Point> pointsInRCS;
-        public RoboDK.Item item;
+        //public RoboDK.Item item;
         private void button5_Click(object sender, EventArgs e)
         {
             unloadingX = Convert.ToInt32(textBox1.Text);
@@ -64,6 +64,8 @@ namespace Lotus
             sheetPoseInRCS = new Point(Convert.ToInt32(textBox7.Text), Convert.ToInt32(textBox8.Text));
             sheetSize = new Size(Convert.ToInt32(textBox10.Text), Convert.ToInt32(textBox9.Text));
             objectSize = Convert.ToInt32(textBox11.Text);
+
+
             // notifybar.Text = RobotControl.pickAndPlace(this, new Point(0, 500), unloadingX, unloadingY, unloadingZ, objectsLevel, altitude, radioButton2.Checked);
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -98,6 +100,7 @@ namespace Lotus
                 work_zone_points.Add(new Point(Convert.ToInt32(line.Split(' ')[1].Split(';')[0]), Convert.ToInt32(line.Split(' ')[1].Split(';')[1])));
             }
             button5_Click(null, null);
+            items = new List<RoboDK.Item>();
         }
 
 
@@ -146,22 +149,39 @@ namespace Lotus
             });
             task.Start();
             task.Wait();
-           
+
 
             if (Check_RDK())
-            {   if (item != null)
-                item.Delete();
+            {
+               // var ViewPose = RDK.ViewPose();
+
+                if (items != null)
+                {
+                    for (int i = 0; i < items.Count; i++)
+                    {
+                        items[i].Delete();
+                    }
+                    items.Clear();
+                }
                 if (pointsInRCS != null)
+                {
+                    items.Clear();
                     foreach (Point point in pointsInRCS)
                     {
+                        RoboDK.Item item;
                         item = RDK.AddFile("object.sld");
                         item.Scale(new double[3] { 0.3, 0.3, 0.3 });
                         item.setPose(Mat.FromXYZRPW(new double[6] { point.X, point.Y, 18, 90, 0, 0 }));
+                        items.Add(item);
+                   //     RDK.setViewPose(ViewPose);
                     }
+
+                }
             }
             /* }
              catch { }  */
         }
+        List<RoboDK.Item> items;
         Recognition1 recognition1;
         Recognition2 recognition2;
         void recognize()
@@ -250,20 +270,26 @@ namespace Lotus
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            var toDelete = RDK.getItem("object.sld");
-            while (toDelete != null)
-            {
-                toDelete.Delete();
-                toDelete = RDK.getItem("object.sld");
-            }
+            timer1.Stop();
+         //   var ViewPose = RDK.ViewPose();
             if (Check_RDK())
             {
+                if (items != null)
+                {
+                    for (int i = 0; i < items.Count; i++)
+                    {
+                        items[i].Delete();
+                    }
+                    items.Clear();
+                }
+
                 foreach (Point point in pointsInRCS)
                 {
+                    RoboDK.Item item;
                     item = RDK.AddFile("object.sld");
                     item.Scale(new double[3] { 0.3, 0.3, 0.3 });
                     item.setPose(Mat.FromXYZRPW(new double[6] { point.X, point.Y, 18, 90, 0, 0 }));
-
+                 //   RDK.setViewPose(ViewPose);
                     ////////////////////////////////////
                     ///////  MOVE TO THE OBJECT    ////
                     ///////////////////////////////////
@@ -271,8 +297,11 @@ namespace Lotus
                     notifybar.Text = RobotControl.pickAndPlace(this, point, unloadingX, unloadingY, unloadingZ, objectsLevel, altitude, radioButton2.Checked);
 
                     item.setPose(Mat.FromXYZRPW(new double[6] { unloadingX, unloadingY, unloadingZ + 18, 90, 0, 0 }));
+                    items.Add(item);
+                  //  RDK.setViewPose(ViewPose);
                 }
             }
+            timer1.Start();
         }
         Point convertToRobotCoordinateSystem(Point point)
         {
@@ -471,6 +500,11 @@ namespace Lotus
                 videoDevice.SimulateTrigger();
                 button2.Enabled = true;
             }
+            if (sender != null)
+            {
+                System.Threading.Thread.Sleep(500);
+                pictureBox2.Image = currentImage;
+            }
         }
         private void videoSourcePlayer1_Click(object sender, EventArgs e)
         {
@@ -486,9 +520,9 @@ namespace Lotus
 
         int point_count = 0;
         List<Point> work_zone_points;
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if (pictureBox1.Image != null)
+            if (pictureBox2.Image != null)
             {
                 if (workZoneSetting)
                 {
@@ -507,8 +541,8 @@ namespace Lotus
                         point_count = 0;
                         workZoneSetting = false;
                         this.Cursor = Cursors.Default;
-                        Image mask = (Image)pictureBox1.Image.Clone();
-                        Bitmap bmp_original = (Bitmap)pictureBox1.Image.Clone();
+                        Image mask = (Image)pictureBox2.Image.Clone();
+                        Bitmap bmp_original = (Bitmap)pictureBox2.Image.Clone();
                         Graphics g = Graphics.FromImage(mask);
 
                         var tempMaskBrush = Brushes.Cyan;
@@ -1636,5 +1670,7 @@ namespace Lotus
         {
             timer1.Stop();
         }
+
+
     }
 }

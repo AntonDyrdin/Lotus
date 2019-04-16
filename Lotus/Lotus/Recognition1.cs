@@ -11,7 +11,7 @@ namespace Lotus
         public FastBitmap background;
         public Color backAVG;
 
-        double delta = 150;
+        double delta = 170;
         public Recognition1(string background)
         {
             this.background = new FastBitmap(Image.FromFile(background));
