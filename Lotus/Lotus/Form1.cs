@@ -16,7 +16,7 @@ using System.Diagnostics;
 
 namespace Lotus
 {
-    public partial class Form1 : Form
+    unsafe public partial class Form1 : Form
     {
         public Form1()
         {
@@ -30,6 +30,7 @@ namespace Lotus
         int altitude;
 
         int objectsLevel;
+        int objectSize;
 
         private FilterInfoCollection videoDevices;
         public VideoCaptureDevice videoDevice;
@@ -48,7 +49,7 @@ namespace Lotus
 
         Point sheetPoseInRCS;
         Size sheetSize;
-
+        List<Point> pointsInRCS;
         public RoboDK.Item item;
         private void button5_Click(object sender, EventArgs e)
         {
@@ -62,8 +63,8 @@ namespace Lotus
 
             sheetPoseInRCS = new Point(Convert.ToInt32(textBox7.Text), Convert.ToInt32(textBox8.Text));
             sheetSize = new Size(Convert.ToInt32(textBox10.Text), Convert.ToInt32(textBox9.Text));
-
-           // notifybar.Text = RobotControl.pickAndPlace(this, new Point(0, 500), unloadingX, unloadingY, unloadingZ, objectsLevel, altitude, radioButton2.Checked);
+            objectSize = Convert.ToInt32(textBox11.Text);
+            // notifybar.Text = RobotControl.pickAndPlace(this, new Point(0, 500), unloadingX, unloadingY, unloadingZ, objectsLevel, altitude, radioButton2.Checked);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -135,51 +136,144 @@ namespace Lotus
            */
             RDK.setSimulationSpeed(1);
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            Recognition1 recognition = new Recognition1("mask.bmp");
-
-            var point = recognition.getXpxYpx(new FastBitmap(pictureBox1.Image));
-
-            Graphics g = pictureBox2.CreateGraphics();
-            g.DrawImage(pictureBox1.Image, 0, 0);
-            //отрисовка маски
-            for (int i = 0; i < recognition.objectMask.Count; i = i + 10)
+            /*try
+            {   */
+            Task task = new Task(() =>
             {
-                g.DrawLine(new Pen(Color.Green), recognition.objectMask[i].X - 3, recognition.objectMask[i].Y, recognition.objectMask[i].X + 3, recognition.objectMask[i].Y);
-                g.DrawLine(new Pen(Color.Green), recognition.objectMask[i].X, recognition.objectMask[i].Y - 3, recognition.objectMask[i].X, recognition.objectMask[i].Y + 3);
-            }
-
-            g.DrawLine(new Pen(Color.Red), point.X - 10, point.Y, point.X + 10, point.Y);
-            g.DrawLine(new Pen(Color.Red), point.X, point.Y - 10, point.X, point.Y + 10);
-
-            g.DrawLine(new Pen(recognition.backAVG, 40), 0, 20, 500, 20);
-
-            //перевод в систему координат робота
-            Point pointInRCS = convertToRobotCoordinateSystem(point);
-            g.DrawString("x = " + pointInRCS.X.ToString() + "mm ( " + point.X + "px )", new Font("Gotic", 15), Brushes.Red, 10, 50);
-            g.DrawString("y = " + pointInRCS.Y.ToString() + "mm ( " + point.Y + "px )", new Font("Gotic", 15), Brushes.Red, 10, 70);
-
-            var toDelete = RDK.getItem("object.sld");
-            toDelete.Delete();
+                recognize();
+            });
+            task.Start();
+            task.Wait();
+           
 
             if (Check_RDK())
+            {   if (item != null)
+                item.Delete();
+                if (pointsInRCS != null)
+                    foreach (Point point in pointsInRCS)
+                    {
+                        item = RDK.AddFile("object.sld");
+                        item.Scale(new double[3] { 0.3, 0.3, 0.3 });
+                        item.setPose(Mat.FromXYZRPW(new double[6] { point.X, point.Y, 18, 90, 0, 0 }));
+                    }
+            }
+            /* }
+             catch { }  */
+        }
+        Recognition1 recognition1;
+        Recognition2 recognition2;
+        void recognize()
+        {
+            triggerButton_Click(null, null);
+            if (currentImage != null)
             {
-                item = RDK.AddFile("object.sld");
-                item.Scale(new double[3] { 0.3, 0.3, 0.3 });
-                item.setPose(Mat.FromXYZRPW(new double[6] { pointInRCS.X, pointInRCS.Y, 18, 90, 0, 0 }));
+                if (radioButton3.Checked)
+                {
+                    if (recognition1 == null)
+                        recognition1 = new Recognition1("mask.bmp");
 
-                ////////////////////////////////////
-                ///////  MOVE TO THE OBJECT    ////
-                ///////////////////////////////////
+                    var point = recognition1.getXpxYpx(new FastBitmap(currentImage));
 
-                notifybar.Text =RobotControl.pickAndPlace(this, pointInRCS, unloadingX, unloadingY, unloadingZ, objectsLevel, altitude, radioButton2.Checked);
+                    Image toPicBox1 = currentImage;
+                    Graphics g = Graphics.FromImage(toPicBox1);
 
-                item.setPose(Mat.FromXYZRPW(new double[6] { unloadingX, unloadingY, unloadingZ + 18, 90, 0, 0 }));
+                    //отрисовка маски
+                    for (int i = 0; i < recognition1.objectMask.Count; i = i + 20)
+                    {
+                        g.DrawLine(new Pen(Color.Blue), recognition1.objectMask[i].X - 3, recognition1.objectMask[i].Y, recognition1.objectMask[i].X + 3, recognition1.objectMask[i].Y);
+                        g.DrawLine(new Pen(Color.Blue), recognition1.objectMask[i].X, recognition1.objectMask[i].Y - 3, recognition1.objectMask[i].X, recognition1.objectMask[i].Y + 3);
+                    }
+
+                    g.DrawLine(new Pen(Color.Red, 3), point.X - 10, point.Y, point.X + 10, point.Y);
+                    g.DrawLine(new Pen(Color.Red, 3), point.X, point.Y - 10, point.X, point.Y + 10);
+
+                    g.DrawLine(new Pen(recognition1.backAVG, 40), 0, 20, 500, 20);
+
+                    //перевод в систему координат робота
+                    Point pointInRCS = convertToRobotCoordinateSystem(point);
+                    g.DrawString("x = " + pointInRCS.X.ToString() + "mm ( " + point.X + "px )", new Font("Gotic", 15), Brushes.Red, 10, 50);
+                    g.DrawString("y = " + pointInRCS.Y.ToString() + "mm ( " + point.Y + "px )", new Font("Gotic", 15), Brushes.Red, 10, 70);
+
+                    pictureBox1.Image = toPicBox1;
+
+                    pointsInRCS = new List<Point>();
+                    pointsInRCS.Add(pointInRCS);
+                }
+
+                if (radioButton4.Checked)
+                {
+                    if (recognition2 == null)
+                        recognition2 = new Recognition2("mask.bmp", objectSize);
+                    List<Point> points = new List<Point>();
+
+                    Image toPicBox1 = currentImage;
+                    Graphics g = Graphics.FromImage(toPicBox1);
+
+
+                    points = recognition2.getXpxYpx(currentImage);
+
+                    //отрисовка маски
+                    for (int i = 0; i < points.Count; i++)
+                    {
+                        g.DrawEllipse(new Pen(Color.LimeGreen, 2), points[i].X - objectSize / 2, points[i].Y - objectSize / 2, objectSize, objectSize);
+
+                        g.DrawLine(new Pen(Color.Red, 3), points[i].X - 10, points[i].Y, points[i].X + 10, points[i].Y);
+                        g.DrawLine(new Pen(Color.Red, 3), points[i].X, points[i].Y - 10, points[i].X, points[i].Y + 10);
+                    }
+
+
+
+                    g.DrawLine(new Pen(recognition2.backAVG, 40), 0, 20, 500, 20);
+
+
+                    pictureBox1.Image = toPicBox1;
+                    //перевод в систему координат робота
+                    pointsInRCS = new List<Point>();
+                    if (recognition2.objects.Count > 0)
+                    {
+                        for (int i = 0; i < recognition2.objects.Count; i++)
+                        {
+                            pointsInRCS.Add(convertToRobotCoordinateSystem(points[i]));
+                            //   g.DrawString("x = " + pointInRCS.X.ToString() + "mm ( " + point.X + "px )", new Font("Gotic", 15), Brushes.Red, 10, 50);
+                            //  g.DrawString("y = " + pointInRCS.Y.ToString() + "mm ( " + point.Y + "px )", new Font("Gotic", 15), Brushes.Red, 10, 70);
+                        }
+                    }
+                }
             }
         }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //pictureBox1.Image = currentImage;
+            recognize();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var toDelete = RDK.getItem("object.sld");
+            while (toDelete != null)
+            {
+                toDelete.Delete();
+                toDelete = RDK.getItem("object.sld");
+            }
+            if (Check_RDK())
+            {
+                foreach (Point point in pointsInRCS)
+                {
+                    item = RDK.AddFile("object.sld");
+                    item.Scale(new double[3] { 0.3, 0.3, 0.3 });
+                    item.setPose(Mat.FromXYZRPW(new double[6] { point.X, point.Y, 18, 90, 0, 0 }));
 
+                    ////////////////////////////////////
+                    ///////  MOVE TO THE OBJECT    ////
+                    ///////////////////////////////////
+
+                    notifybar.Text = RobotControl.pickAndPlace(this, point, unloadingX, unloadingY, unloadingZ, objectsLevel, altitude, radioButton2.Checked);
+
+                    item.setPose(Mat.FromXYZRPW(new double[6] { unloadingX, unloadingY, unloadingZ + 18, 90, 0, 0 }));
+                }
+            }
+        }
         Point convertToRobotCoordinateSystem(Point point)
         {
             double Y = sheetPoseInRCS.Y + sheetSize.Width * (point.X - work_zone_points[0].X) / (work_zone_points[1].X - work_zone_points[0].X);
@@ -365,10 +459,10 @@ namespace Lotus
     */
         }
         // New snapshot frame is available
+        Bitmap currentImage;
         private void videoDevice_SnapshotFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            pictureBox1.Image = (Bitmap)eventArgs.Frame.Clone();
-
+            currentImage = (Bitmap)eventArgs.Frame.Clone();
         }
         private void triggerButton_Click(object sender, EventArgs e)
         {
@@ -1396,6 +1490,7 @@ namespace Lotus
         {
             connectButton_Click(null, null);
 
+            // pictureBox1.Image = Image.FromFile("test.bmp");
         }
         // Closing the main form
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -1531,7 +1626,15 @@ namespace Lotus
         {
 
         }
-        // Simulate snapshot trigger
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
     }
 }

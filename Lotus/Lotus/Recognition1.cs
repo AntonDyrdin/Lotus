@@ -55,17 +55,16 @@ namespace Lotus
             return ans;
         }
         public List<Point> objectMask;
-        public List<Point> workZoneMask;
-        public List<Point> OutOfWorkZoneMask;
         public Point getXpxYpx(FastBitmap bitmap)
         {
             objectMask = new List<Point>();
-
+            bitmap.LockBitmap();
+            background.LockBitmap();
             for (int i = 0; i < bitmap.Bitmap.Width; i++)
                 for (int j = 0; j < bitmap.Bitmap.Height; j++)
                 {
-                    var pixel = bitmap.bitmap.GetPixel(i, j);
-                    var backgroundPixel = background.bitmap.GetPixel(i, j);
+                    var pixel = bitmap.GetPixel(i, j);
+                    var backgroundPixel = background.GetPixel(i, j);
 
                     if (backgroundPixel.R != 255 | backgroundPixel.G != 255 | backgroundPixel.B != 255)
                     {
@@ -76,7 +75,8 @@ namespace Lotus
                         }
                     }
                 }
-
+            background.UnlockBitmap();
+            bitmap.UnlockBitmap();
             //поиск центра
             if (objectMask.Count > 0)
             {
