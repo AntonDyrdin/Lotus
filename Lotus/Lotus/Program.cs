@@ -14,9 +14,15 @@ namespace Lotus
         [STAThread]
         static void Main()
         {
+           
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Preview preview;
+            preview = new Preview();
+            preview.ShowInTaskbar = false;
+            preview.Show();
+            Application.Run(new Form1(preview));
         }
     }
 }

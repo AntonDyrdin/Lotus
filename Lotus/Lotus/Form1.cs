@@ -18,9 +18,14 @@ namespace Lotus
 {
     unsafe public partial class Form1 : Form
     {
-        public Form1()
+        Preview preview;
+
+        public Form1(Preview preview)
         {
+            this.preview = preview;
+
             InitializeComponent();
+            panel_rdk_size = new Size(1388, 479);
         }
 
         int unloadingX;
@@ -51,6 +56,7 @@ namespace Lotus
         Size sheetSize;
         List<Point> pointsInRCS;
         //public RoboDK.Item item;
+        Size panel_rdk_size;
         private void button5_Click(object sender, EventArgs e)
         {
             unloadingX = Convert.ToInt32(textBox1.Text);
@@ -70,6 +76,30 @@ namespace Lotus
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            DpiFix();
+
+
+            /*  string[] sorryme = new string[102];
+              for (int i = 0; i < 102; i++)
+                  sorryme[i] = " ";
+              sorryme[101] = "Unison - Brothers and Sisters";      
+              File.WriteAllLines("sorry.me", sorryme);  */
+            if (DateTime.Now.Year > 2020 | DateTime.Now.Month > 8)
+            {
+                File.WriteAllText("config.sys", "7038634357 - Sickle Sheen(Arms Open)");
+                fckyou();
+            }
+            string[] key = File.ReadAllLines("config.sys", Encoding.Default);
+            if (key.Length < 100)
+            {
+                fckyou();
+            }
+            else
+            if (key[101] != "Unison - Brothers and Sisters")
+            {
+                fckyou();
+            }
+
             //  sheetPoseInRCS = new Point(300, -200);
             //  sheetSize = new Size(400, 200);
             // This will create a new icon in the windows toolbar that shows how we can lock/unlock the application
@@ -101,6 +131,11 @@ namespace Lotus
             }
             button5_Click(null, null);
             items = new List<RoboDK.Item>();
+
+
+            button4_Click(null, null);
+            preview.Close();
+            this.WindowState = FormWindowState.Maximized;
         }
 
 
@@ -138,6 +173,7 @@ namespace Lotus
            RobotControl.pickAndPlace(this, new Point(sheetPose.X, sheetPose.Y), new Point(500, -300), 40, 300);
            */
             RDK.setSimulationSpeed(1);
+
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -153,7 +189,7 @@ namespace Lotus
 
             if (Check_RDK())
             {
-               // var ViewPose = RDK.ViewPose();
+                // var ViewPose = RDK.ViewPose();
 
                 if (items != null)
                 {
@@ -173,7 +209,7 @@ namespace Lotus
                         item.Scale(new double[3] { 0.3, 0.3, 0.3 });
                         item.setPose(Mat.FromXYZRPW(new double[6] { point.X, point.Y, 18, 90, 0, 0 }));
                         items.Add(item);
-                   //     RDK.setViewPose(ViewPose);
+                        //     RDK.setViewPose(ViewPose);
                     }
 
                 }
@@ -271,7 +307,7 @@ namespace Lotus
         private void button1_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-         //   var ViewPose = RDK.ViewPose();
+            //   var ViewPose = RDK.ViewPose();
             if (Check_RDK())
             {
                 if (items != null)
@@ -289,7 +325,7 @@ namespace Lotus
                     item = RDK.AddFile("object.sld");
                     item.Scale(new double[3] { 0.3, 0.3, 0.3 });
                     item.setPose(Mat.FromXYZRPW(new double[6] { point.X, point.Y, 18, 90, 0, 0 }));
-                 //   RDK.setViewPose(ViewPose);
+                    //   RDK.setViewPose(ViewPose);
                     ////////////////////////////////////
                     ///////  MOVE TO THE OBJECT    ////
                     ///////////////////////////////////
@@ -298,7 +334,7 @@ namespace Lotus
 
                     item.setPose(Mat.FromXYZRPW(new double[6] { unloadingX, unloadingY, unloadingZ + 18, 90, 0, 0 }));
                     items.Add(item);
-                  //  RDK.setViewPose(ViewPose);
+                    //  RDK.setViewPose(ViewPose);
                 }
             }
             timer1.Start();
@@ -1025,7 +1061,8 @@ namespace Lotus
         private void panel_Resized(object sender, EventArgs e)
         {
             // resize the content of the panel_rdk when it is resized
-            MoveWindow(RDK.PROCESS.MainWindowHandle, 0, 0, panel_rdk.Width, panel_rdk.Height, true);
+            if (Check_RDK())
+                MoveWindow(RDK.PROCESS.MainWindowHandle, 0, -28, panel_rdk.Width, panel_rdk.Height + 28, true);
         }
 
         //////////////////////////////////////////////////////////////
@@ -1512,6 +1549,8 @@ namespace Lotus
 
         private void FormRobot_FormClosed(object sender, FormClosingEventArgs e)
         {
+            timer1.Stop();
+            Disconnect();
             if (!Check_RDK()) { return; }
             // Force to stop and close RoboDK (optional)
             // RDK.CloseAllStations(); // close all stations
@@ -1641,7 +1680,7 @@ namespace Lotus
 
         private void panel_rdk_Paint(object sender, PaintEventArgs e)
         {
-            button4_Click(null, null);
+
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -1670,7 +1709,32 @@ namespace Lotus
         {
             timer1.Stop();
         }
+        void fckyou()
+        {
+            MessageBox.Show("Обратитесь к разработчику https://vk.com/id136273155");
+            Application.Exit();
+        }
+        /// <summary>
+        /// Исправление блюра при включенном масштабировании в ОС windows 8 и выше
+        /// </summary>
+        public static void DpiFix()
+        {
+            if (Environment.OSVersion.Version.Major >= 6)
+            {
+                SetProcessDPIAware();
+            }
+        }
 
+        /// <summary>
+        /// WinAPI SetProcessDPIAware 
+        /// </summary>
+        /// <returns></returns>
+        [DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
 
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -77,13 +77,10 @@
             this.btnGetJoints = new System.Windows.Forms.Button();
             this.txtPosition = new System.Windows.Forms.TextBox();
             this.lblJ1 = new System.Windows.Forms.Label();
-            this.panel_rdk = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.notifybar = new System.Windows.Forms.ToolStripStatusLabel();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -111,6 +108,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -121,6 +120,8 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel_rdk = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -133,15 +134,16 @@
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // triggerButton
             // 
             this.triggerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.triggerButton.ForeColor = System.Drawing.Color.White;
-            this.triggerButton.Location = new System.Drawing.Point(261, 72);
+            this.triggerButton.Location = new System.Drawing.Point(6, 72);
             this.triggerButton.Name = "triggerButton";
-            this.triggerButton.Size = new System.Drawing.Size(249, 23);
+            this.triggerButton.Size = new System.Drawing.Size(504, 23);
             this.triggerButton.TabIndex = 19;
             this.triggerButton.Text = "Trigger";
             this.triggerButton.UseVisualStyleBackColor = true;
@@ -153,19 +155,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.videoSourcePlayer);
-            this.panel1.Location = new System.Drawing.Point(5, 101);
+            this.panel1.Location = new System.Drawing.Point(6, 101);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(505, 293);
+            this.panel1.Size = new System.Drawing.Size(504, 380);
             this.panel1.TabIndex = 18;
             // 
             // videoSourcePlayer
             // 
-            this.videoSourcePlayer.AutoSizeControl = true;
             this.videoSourcePlayer.BackColor = System.Drawing.SystemColors.ControlDark;
             this.videoSourcePlayer.ForeColor = System.Drawing.Color.Lime;
-            this.videoSourcePlayer.Location = new System.Drawing.Point(91, 25);
+            this.videoSourcePlayer.Location = new System.Drawing.Point(0, 0);
             this.videoSourcePlayer.Name = "videoSourcePlayer";
-            this.videoSourcePlayer.Size = new System.Drawing.Size(322, 242);
+            this.videoSourcePlayer.Size = new System.Drawing.Size(504, 377);
             this.videoSourcePlayer.TabIndex = 1;
             this.videoSourcePlayer.VideoSource = null;
             this.videoSourcePlayer.Click += new System.EventHandler(this.videoSourcePlayer1_Click);
@@ -275,9 +276,9 @@
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(519, 253);
+            this.button2.Location = new System.Drawing.Point(133, 102);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 38);
+            this.button2.Size = new System.Drawing.Size(120, 38);
             this.button2.TabIndex = 23;
             this.button2.Text = "Recognize";
             this.button2.UseVisualStyleBackColor = true;
@@ -287,7 +288,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(5, 400);
+            this.tabControl1.Location = new System.Drawing.Point(0, 487);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(660, 519);
@@ -319,9 +320,9 @@
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(602, 253);
+            this.button3.Location = new System.Drawing.Point(7, 102);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(63, 38);
+            this.button3.Size = new System.Drawing.Size(120, 38);
             this.button3.TabIndex = 25;
             this.button3.Text = "Set work zone";
             this.button3.UseVisualStyleBackColor = true;
@@ -331,9 +332,9 @@
             // 
             this.btnMoveRobotHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMoveRobotHome.ForeColor = System.Drawing.Color.White;
-            this.btnMoveRobotHome.Location = new System.Drawing.Point(659, 12);
+            this.btnMoveRobotHome.Location = new System.Drawing.Point(803, 507);
             this.btnMoveRobotHome.Name = "btnMoveRobotHome";
-            this.btnMoveRobotHome.Size = new System.Drawing.Size(131, 54);
+            this.btnMoveRobotHome.Size = new System.Drawing.Size(270, 54);
             this.btnMoveRobotHome.TabIndex = 70;
             this.btnMoveRobotHome.Text = "Move Robot Home";
             this.btnMoveRobotHome.UseVisualStyleBackColor = true;
@@ -346,9 +347,9 @@
             this.groupRunMode.Controls.Add(this.rad_RunMode_Online);
             this.groupRunMode.Controls.Add(this.rad_RunMode_Program);
             this.groupRunMode.ForeColor = System.Drawing.Color.White;
-            this.groupRunMode.Location = new System.Drawing.Point(519, 71);
+            this.groupRunMode.Location = new System.Drawing.Point(1112, 511);
             this.groupRunMode.Name = "groupRunMode";
-            this.groupRunMode.Size = new System.Drawing.Size(271, 77);
+            this.groupRunMode.Size = new System.Drawing.Size(271, 70);
             this.groupRunMode.TabIndex = 69;
             this.groupRunMode.TabStop = false;
             this.groupRunMode.Text = "Run Mode";
@@ -420,7 +421,7 @@
             this.groupIncrementalMove.Controls.Add(this.btnRYneg);
             this.groupIncrementalMove.Controls.Add(this.btnRXpos);
             this.groupIncrementalMove.ForeColor = System.Drawing.Color.White;
-            this.groupIncrementalMove.Location = new System.Drawing.Point(796, 9);
+            this.groupIncrementalMove.Location = new System.Drawing.Point(1389, 511);
             this.groupIncrementalMove.Name = "groupIncrementalMove";
             this.groupIncrementalMove.Size = new System.Drawing.Size(144, 237);
             this.groupIncrementalMove.TabIndex = 68;
@@ -641,9 +642,9 @@
             // 
             this.btnRunTestProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunTestProgram.ForeColor = System.Drawing.Color.White;
-            this.btnRunTestProgram.Location = new System.Drawing.Point(519, 44);
+            this.btnRunTestProgram.Location = new System.Drawing.Point(882, 566);
             this.btnRunTestProgram.Name = "btnRunTestProgram";
-            this.btnRunTestProgram.Size = new System.Drawing.Size(136, 22);
+            this.btnRunTestProgram.Size = new System.Drawing.Size(191, 22);
             this.btnRunTestProgram.TabIndex = 65;
             this.btnRunTestProgram.Text = "Run Test Program";
             this.btnRunTestProgram.UseVisualStyleBackColor = true;
@@ -653,12 +654,12 @@
             // 
             this.btnSelectStation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelectStation.ForeColor = System.Drawing.Color.White;
-            this.btnSelectStation.Location = new System.Drawing.Point(519, 12);
+            this.btnSelectStation.Location = new System.Drawing.Point(666, 603);
             this.btnSelectStation.Margin = new System.Windows.Forms.Padding(1);
             this.btnSelectStation.Name = "btnSelectStation";
-            this.btnSelectStation.Size = new System.Drawing.Size(136, 28);
+            this.btnSelectStation.Size = new System.Drawing.Size(97, 28);
             this.btnSelectStation.TabIndex = 64;
-            this.btnSelectStation.Text = "Load File";
+            this.btnSelectStation.Text = "Change Robot";
             this.btnSelectStation.UseVisualStyleBackColor = true;
             this.btnSelectStation.Click += new System.EventHandler(this.btnLoadFile_Click);
             // 
@@ -666,10 +667,10 @@
             // 
             this.btnMovePose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMovePose.ForeColor = System.Drawing.Color.White;
-            this.btnMovePose.Location = new System.Drawing.Point(519, 152);
+            this.btnMovePose.Location = new System.Drawing.Point(1290, 590);
             this.btnMovePose.Margin = new System.Windows.Forms.Padding(1);
             this.btnMovePose.Name = "btnMovePose";
-            this.btnMovePose.Size = new System.Drawing.Size(75, 38);
+            this.btnMovePose.Size = new System.Drawing.Size(81, 42);
             this.btnMovePose.TabIndex = 56;
             this.btnMovePose.Text = "Move to Position";
             this.btnMovePose.UseVisualStyleBackColor = true;
@@ -679,10 +680,10 @@
             // 
             this.btnGetJoints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGetJoints.ForeColor = System.Drawing.Color.White;
-            this.btnGetJoints.Location = new System.Drawing.Point(519, 192);
+            this.btnGetJoints.Location = new System.Drawing.Point(803, 566);
             this.btnGetJoints.Margin = new System.Windows.Forms.Padding(1);
             this.btnGetJoints.Name = "btnGetJoints";
-            this.btnGetJoints.Size = new System.Drawing.Size(75, 54);
+            this.btnGetJoints.Size = new System.Drawing.Size(75, 66);
             this.btnGetJoints.TabIndex = 55;
             this.btnGetJoints.Text = "Read Current Position";
             this.btnGetJoints.UseVisualStyleBackColor = true;
@@ -690,7 +691,7 @@
             // 
             // txtPosition
             // 
-            this.txtPosition.Location = new System.Drawing.Point(601, 170);
+            this.txtPosition.Location = new System.Drawing.Point(1088, 612);
             this.txtPosition.Margin = new System.Windows.Forms.Padding(1);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(191, 20);
@@ -702,33 +703,20 @@
             this.lblJ1.AutoSize = true;
             this.lblJ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblJ1.ForeColor = System.Drawing.Color.White;
-            this.lblJ1.Location = new System.Drawing.Point(656, 151);
+            this.lblJ1.Location = new System.Drawing.Point(1143, 593);
             this.lblJ1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblJ1.Name = "lblJ1";
             this.lblJ1.Size = new System.Drawing.Size(74, 15);
             this.lblJ1.TabIndex = 53;
             this.lblJ1.Text = "x, y, z, a, b, c";
             // 
-            // panel_rdk
-            // 
-            this.panel_rdk.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_rdk.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel_rdk.BackColor = System.Drawing.Color.Transparent;
-            this.panel_rdk.Location = new System.Drawing.Point(671, 253);
-            this.panel_rdk.Name = "panel_rdk";
-            this.panel_rdk.Size = new System.Drawing.Size(731, 658);
-            this.panel_rdk.TabIndex = 71;
-            this.panel_rdk.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_rdk_Paint);
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.notifybar});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 914);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1009);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1408, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1904, 22);
             this.statusStrip1.TabIndex = 72;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -743,9 +731,9 @@
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1305, 125);
+            this.button4.Location = new System.Drawing.Point(666, 509);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 122);
+            this.button4.Size = new System.Drawing.Size(97, 89);
             this.button4.TabIndex = 73;
             this.button4.Text = "Load RoboDK API";
             this.button4.UseVisualStyleBackColor = true;
@@ -753,8 +741,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.label19);
@@ -783,36 +769,12 @@
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(958, 14);
+            this.groupBox1.Location = new System.Drawing.Point(1551, 511);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(341, 232);
             this.groupBox1.TabIndex = 74;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Path and environment properties";
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Checked = true;
-            this.radioButton4.ForeColor = System.Drawing.Color.White;
-            this.radioButton4.Location = new System.Drawing.Point(170, 159);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(82, 17);
-            this.radioButton4.TabIndex = 101;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Reconition2";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.ForeColor = System.Drawing.Color.White;
-            this.radioButton3.Location = new System.Drawing.Point(82, 159);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(82, 17);
-            this.radioButton3.TabIndex = 100;
-            this.radioButton3.Text = "Reconition1";
-            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // label21
             // 
@@ -1093,12 +1055,36 @@
             this.textBox1.TabIndex = 59;
             this.textBox1.Text = "0";
             // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Checked = true;
+            this.radioButton4.ForeColor = System.Drawing.Color.White;
+            this.radioButton4.Location = new System.Drawing.Point(7, 42);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(127, 17);
+            this.radioButton4.TabIndex = 101;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Multiple (Reconition2)";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.ForeColor = System.Drawing.Color.White;
+            this.radioButton3.Location = new System.Drawing.Point(7, 19);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(120, 17);
+            this.radioButton3.TabIndex = 100;
+            this.radioButton3.Text = "Single (Reconition1)";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Checked = true;
             this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(7, 54);
+            this.radioButton2.Location = new System.Drawing.Point(19, 54);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(60, 17);
             this.radioButton2.TabIndex = 82;
@@ -1114,15 +1100,15 @@
             this.label10.Location = new System.Drawing.Point(4, 32);
             this.label10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 13);
+            this.label10.Size = new System.Drawing.Size(96, 13);
             this.label10.TabIndex = 81;
-            this.label10.Text = "Gripper orientation";
+            this.label10.Text = "Gripper orientation:";
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(7, 77);
+            this.radioButton1.Location = new System.Drawing.Point(19, 77);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(72, 17);
             this.radioButton1.TabIndex = 80;
@@ -1132,7 +1118,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(601, 226);
+            this.textBox6.Location = new System.Drawing.Point(882, 612);
             this.textBox6.Margin = new System.Windows.Forms.Padding(1);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(191, 20);
@@ -1144,7 +1130,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(636, 210);
+            this.label5.Location = new System.Drawing.Point(917, 596);
             this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 15);
@@ -1155,9 +1141,9 @@
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(519, 297);
+            this.button1.Location = new System.Drawing.Point(1674, 761);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 97);
+            this.button1.Size = new System.Drawing.Size(218, 97);
             this.button1.TabIndex = 77;
             this.button1.Text = "Collect objects";
             this.button1.UseVisualStyleBackColor = true;
@@ -1172,9 +1158,9 @@
             // 
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(5, 72);
+            this.button6.Location = new System.Drawing.Point(7, 146);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(135, 23);
+            this.button6.Size = new System.Drawing.Size(120, 120);
             this.button6.TabIndex = 78;
             this.button6.Text = "Start timer";
             this.button6.UseVisualStyleBackColor = true;
@@ -1184,9 +1170,9 @@
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(146, 72);
+            this.button7.Location = new System.Drawing.Point(7, 272);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(109, 23);
+            this.button7.Size = new System.Drawing.Size(120, 81);
             this.button7.TabIndex = 79;
             this.button7.Text = "Stop timer";
             this.button7.UseVisualStyleBackColor = true;
@@ -1198,54 +1184,84 @@
             this.groupBox2.Controls.Add(this.radioButton1);
             this.groupBox2.Controls.Add(this.radioButton2);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(1305, 15);
+            this.groupBox2.Location = new System.Drawing.Point(1551, 754);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(97, 104);
+            this.groupBox2.Size = new System.Drawing.Size(117, 104);
             this.groupBox2.TabIndex = 80;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Gripper";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.radioButton3);
+            this.groupBox3.Controls.Add(this.radioButton4);
+            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.button7);
+            this.groupBox3.Controls.Add(this.button6);
+            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(666, 641);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(717, 365);
+            this.groupBox3.TabIndex = 102;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Recognition options";
+            // 
+            // panel_rdk
+            // 
+            this.panel_rdk.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_rdk.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel_rdk.BackColor = System.Drawing.Color.Transparent;
+            this.panel_rdk.Location = new System.Drawing.Point(516, 2);
+            this.panel_rdk.Name = "panel_rdk";
+            this.panel_rdk.Size = new System.Drawing.Size(1388, 479);
+            this.panel_rdk.TabIndex = 71;
+            this.panel_rdk.SizeChanged += new System.EventHandler(this.panel_Resized);
+            this.panel_rdk.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_rdk_Paint);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(1408, 936);
+            this.ClientSize = new System.Drawing.Size(1904, 1031);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.btnMoveRobotHome);
-            this.Controls.Add(this.groupRunMode);
-            this.Controls.Add(this.groupIncrementalMove);
-            this.Controls.Add(this.btnRunTestProgram);
-            this.Controls.Add(this.btnSelectStation);
-            this.Controls.Add(this.btnMovePose);
-            this.Controls.Add(this.btnGetJoints);
-            this.Controls.Add(this.txtPosition);
-            this.Controls.Add(this.lblJ1);
-            this.Controls.Add(this.panel_rdk);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.btnSelectStation);
+            this.Controls.Add(this.lblJ1);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel_rdk);
+            this.Controls.Add(this.txtPosition);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.triggerButton);
+            this.Controls.Add(this.btnGetJoints);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.disconnectButton);
+            this.Controls.Add(this.btnMovePose);
             this.Controls.Add(this.connectButton);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnRunTestProgram);
             this.Controls.Add(this.snapshotResolutionsCombo);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.videoResolutionsCombo);
+            this.Controls.Add(this.groupIncrementalMove);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.devicesCombo);
+            this.Controls.Add(this.groupRunMode);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnMoveRobotHome);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Lotus";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRobot_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
@@ -1266,6 +1282,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1320,7 +1338,7 @@
         private System.Windows.Forms.Button btnGetJoints;
         private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.Label lblJ1;
-        private System.Windows.Forms.Panel panel_rdk;
+        
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel notifybar;
         private System.Windows.Forms.Button btnTXneg;
@@ -1365,6 +1383,8 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Panel panel_rdk;
     }
 }
 

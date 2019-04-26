@@ -47,3 +47,4 @@ D:\Anton\Desktop\Lotus\Lotus\Lotus\obj\Debug\Lotus.csproj.GenerateResource.Cache
 D:\Anton\Desktop\Lotus\Lotus\Lotus\obj\Debug\Lotus.csproj.CoreCompileInputs.cache
 D:\Anton\Desktop\Lotus\Lotus\Lotus\obj\Debug\Lotus.exe
 D:\Anton\Desktop\Lotus\Lotus\Lotus\obj\Debug\Lotus.pdb
+D:\Anton\Desktop\Lotus\Lotus\Lotus\obj\Debug\Lotus.Preview.resources
