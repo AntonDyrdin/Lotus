@@ -38,18 +38,18 @@ namespace Lotus
                         form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { A.X, A.Y, altitude, Math.Atan(A.Y / A.X) * 180 / 3.14, b, 0 }));
                         form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { A.X, A.Y, objectsLevel, Math.Atan(A.Y / A.X) * 180 / 3.14, b, 0 }));
                         form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { A.X, A.Y, altitude, Math.Atan(A.Y / A.X) * 180 / 3.14, b, 0 }));
-                        form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { B_X, B_Y, altitude, Math.Atan(B_Y / B_X) * 180 / 3.14, b, 0 }));
-                        form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { B_X, B_Y, B_Z, Math.Atan(B_Y / B_X) * 180 / 3.14, b, 0 }));
-                        form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { B_X, B_Y, altitude, Math.Atan(B_Y / B_X) * 180 / 3.14, b, 0 }));
+                    //    form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { B_X, B_Y, altitude, Math.Atan(B_Y / B_X) * 180 / 3.14, b, 0 }));
+                    //    form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { B_X, B_Y, B_Z, Math.Atan(B_Y / B_X) * 180 / 3.14, b, 0 }));
+                    //    form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { B_X, B_Y, altitude, Math.Atan(B_Y / B_X) * 180 / 3.14, b, 0 }));
                     }
                     else
                     {
                         form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { A.X, A.Y, altitude, 0, b, 0 }));
                         form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { A.X, A.Y, objectsLevel, 0, b, 0 }));
                         form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { A.X, A.Y, altitude, 0, b, 0 }));
-                        form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { B_X, B_Y, altitude, 0, b, 0 }));
-                        form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { B_X, B_Y, B_Z, 0, b, 0 }));
-                        form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { B_X, B_Y, altitude, 0, b, 0 }));
+                       // form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { B_X, B_Y, altitude, 0, b, 0 }));
+                       // form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { B_X, B_Y, B_Z, 0, b, 0 }));
+                       // form.ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { B_X, B_Y, altitude, 0, b, 0 }));
                     }
             
                 return "done";

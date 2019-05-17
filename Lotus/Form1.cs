@@ -427,7 +427,7 @@ namespace Lotus
                     }
 
                     var X = MousePosition.X - this.Location.X - tabControl1.Location.X - pictureBox1.Location.X - 12;
-                    var Y = MousePosition.Y - this.Location.Y - tabControl1.Location.Y - pictureBox1.Location.Y - 44;
+                    var Y = MousePosition.Y - this.Location.Y - tabControl1.Location.Y - pictureBox1.Location.Y - 64;
                     work_zone_points.Add(new Point(X, Y));
                     point_count++;
 
@@ -1500,6 +1500,16 @@ namespace Lotus
                 recognition1.delta = trackBar2.Value;
             if (recognition2 != null)
                 recognition2.delta = trackBar2.Value;
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 

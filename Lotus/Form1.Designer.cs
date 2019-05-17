@@ -85,6 +85,10 @@
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label23 = new System.Windows.Forms.Label();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.label22 = new System.Windows.Forms.Label();
@@ -117,15 +121,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -143,8 +143,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numStep)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,9 +152,10 @@
             // 
             this.triggerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.triggerButton.ForeColor = System.Drawing.Color.White;
-            this.triggerButton.Location = new System.Drawing.Point(6, 72);
+            this.triggerButton.Location = new System.Drawing.Point(9, 108);
+            this.triggerButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.triggerButton.Name = "triggerButton";
-            this.triggerButton.Size = new System.Drawing.Size(504, 23);
+            this.triggerButton.Size = new System.Drawing.Size(756, 34);
             this.triggerButton.TabIndex = 19;
             this.triggerButton.Text = "Захват кадра";
             this.triggerButton.UseVisualStyleBackColor = true;
@@ -166,9 +167,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.videoSourcePlayer);
-            this.panel1.Location = new System.Drawing.Point(6, 101);
+            this.panel1.Location = new System.Drawing.Point(9, 152);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(504, 430);
+            this.panel1.Size = new System.Drawing.Size(1203, 1180);
             this.panel1.TabIndex = 18;
             this.panel1.SizeChanged += new System.EventHandler(this.panel1_SizeChanged);
             // 
@@ -177,8 +179,9 @@
             this.videoSourcePlayer.BackColor = System.Drawing.SystemColors.ControlDark;
             this.videoSourcePlayer.ForeColor = System.Drawing.Color.Lime;
             this.videoSourcePlayer.Location = new System.Drawing.Point(0, 0);
+            this.videoSourcePlayer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.videoSourcePlayer.Name = "videoSourcePlayer";
-            this.videoSourcePlayer.Size = new System.Drawing.Size(501, 426);
+            this.videoSourcePlayer.Size = new System.Drawing.Size(752, 639);
             this.videoSourcePlayer.TabIndex = 1;
             this.videoSourcePlayer.VideoSource = null;
             this.videoSourcePlayer.Click += new System.EventHandler(this.videoSourcePlayer1_Click);
@@ -187,9 +190,10 @@
             // 
             this.disconnectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.disconnectButton.ForeColor = System.Drawing.Color.White;
-            this.disconnectButton.Location = new System.Drawing.Point(408, 42);
+            this.disconnectButton.Location = new System.Drawing.Point(612, 63);
+            this.disconnectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.disconnectButton.Name = "disconnectButton";
-            this.disconnectButton.Size = new System.Drawing.Size(102, 23);
+            this.disconnectButton.Size = new System.Drawing.Size(153, 34);
             this.disconnectButton.TabIndex = 17;
             this.disconnectButton.Text = "Отключиться";
             this.disconnectButton.UseVisualStyleBackColor = true;
@@ -199,9 +203,10 @@
             // 
             this.connectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.connectButton.ForeColor = System.Drawing.Color.White;
-            this.connectButton.Location = new System.Drawing.Point(408, 12);
+            this.connectButton.Location = new System.Drawing.Point(612, 18);
+            this.connectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.connectButton.Name = "connectButton";
-            this.connectButton.Size = new System.Drawing.Size(102, 23);
+            this.connectButton.Size = new System.Drawing.Size(153, 34);
             this.connectButton.TabIndex = 16;
             this.connectButton.Text = "Подключиться";
             this.connectButton.UseVisualStyleBackColor = true;
@@ -211,9 +216,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(193, 45);
+            this.label3.Location = new System.Drawing.Point(290, 68);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 13);
+            this.label3.Size = new System.Drawing.Size(171, 20);
             this.label3.TabIndex = 15;
             this.label3.Text = "Разрешение захвата:";
             // 
@@ -221,27 +227,30 @@
             // 
             this.snapshotResolutionsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.snapshotResolutionsCombo.FormattingEnabled = true;
-            this.snapshotResolutionsCombo.Location = new System.Drawing.Point(319, 42);
+            this.snapshotResolutionsCombo.Location = new System.Drawing.Point(478, 63);
+            this.snapshotResolutionsCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.snapshotResolutionsCombo.Name = "snapshotResolutionsCombo";
-            this.snapshotResolutionsCombo.Size = new System.Drawing.Size(83, 21);
+            this.snapshotResolutionsCombo.Size = new System.Drawing.Size(122, 28);
             this.snapshotResolutionsCombo.TabIndex = 14;
             // 
             // videoResolutionsCombo
             // 
             this.videoResolutionsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.videoResolutionsCombo.FormattingEnabled = true;
-            this.videoResolutionsCombo.Location = new System.Drawing.Point(109, 42);
+            this.videoResolutionsCombo.Location = new System.Drawing.Point(164, 63);
+            this.videoResolutionsCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.videoResolutionsCombo.Name = "videoResolutionsCombo";
-            this.videoResolutionsCombo.Size = new System.Drawing.Size(78, 21);
+            this.videoResolutionsCombo.Size = new System.Drawing.Size(115, 28);
             this.videoResolutionsCombo.TabIndex = 13;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(2, 45);
+            this.label2.Location = new System.Drawing.Point(3, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 13);
+            this.label2.Size = new System.Drawing.Size(158, 20);
             this.label2.TabIndex = 12;
             this.label2.Text = "Разрешение видео:";
             // 
@@ -249,9 +258,10 @@
             // 
             this.devicesCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.devicesCombo.FormattingEnabled = true;
-            this.devicesCombo.Location = new System.Drawing.Point(109, 12);
+            this.devicesCombo.Location = new System.Drawing.Point(164, 18);
+            this.devicesCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.devicesCombo.Name = "devicesCombo";
-            this.devicesCombo.Size = new System.Drawing.Size(293, 21);
+            this.devicesCombo.Size = new System.Drawing.Size(438, 28);
             this.devicesCombo.TabIndex = 11;
             this.devicesCombo.SelectedValueChanged += new System.EventHandler(this.devicesCombo_SelectedIndexChanged);
             // 
@@ -259,9 +269,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(2, 15);
+            this.label1.Location = new System.Drawing.Point(3, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 13);
+            this.label1.Size = new System.Drawing.Size(152, 20);
             this.label1.TabIndex = 10;
             this.label1.Text = "Видео устройства:";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
@@ -269,18 +280,20 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.pictureBox1.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 8);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(640, 480);
+            this.pictureBox1.Size = new System.Drawing.Size(960, 720);
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.pictureBox2.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(8, 8);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(640, 480);
+            this.pictureBox2.Size = new System.Drawing.Size(960, 720);
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -289,9 +302,10 @@
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(402, 14);
+            this.button2.Location = new System.Drawing.Point(603, 21);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 84);
+            this.button2.Size = new System.Drawing.Size(183, 126);
             this.button2.TabIndex = 23;
             this.button2.Text = "Распознать координаты";
             this.button2.UseVisualStyleBackColor = true;
@@ -301,20 +315,22 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(528, 12);
+            this.tabControl1.Location = new System.Drawing.Point(792, 18);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(660, 519);
+            this.tabControl1.Size = new System.Drawing.Size(990, 778);
             this.tabControl1.TabIndex = 24;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.tabPage1.Controls.Add(this.pictureBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(652, 493);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(982, 745);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Распознавание";
             // 
@@ -322,10 +338,11 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.tabPage2.Controls.Add(this.pictureBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(652, 493);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(982, 745);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Исходное изображение";
             // 
@@ -333,9 +350,10 @@
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(404, 104);
+            this.button3.Location = new System.Drawing.Point(606, 156);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 52);
+            this.button3.Size = new System.Drawing.Size(180, 78);
             this.button3.TabIndex = 25;
             this.button3.Text = "Задать рабочую зону";
             this.button3.UseVisualStyleBackColor = true;
@@ -346,9 +364,10 @@
             this.btnMoveRobotHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMoveRobotHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnMoveRobotHome.ForeColor = System.Drawing.Color.White;
-            this.btnMoveRobotHome.Location = new System.Drawing.Point(769, 689);
+            this.btnMoveRobotHome.Location = new System.Drawing.Point(1154, 1034);
+            this.btnMoveRobotHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMoveRobotHome.Name = "btnMoveRobotHome";
-            this.btnMoveRobotHome.Size = new System.Drawing.Size(97, 66);
+            this.btnMoveRobotHome.Size = new System.Drawing.Size(146, 99);
             this.btnMoveRobotHome.TabIndex = 70;
             this.btnMoveRobotHome.Text = "В домашнюю позицию";
             this.btnMoveRobotHome.UseVisualStyleBackColor = true;
@@ -363,9 +382,11 @@
             this.groupRunMode.Controls.Add(this.rad_RunMode_Program);
             this.groupRunMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupRunMode.ForeColor = System.Drawing.Color.White;
-            this.groupRunMode.Location = new System.Drawing.Point(870, 538);
+            this.groupRunMode.Location = new System.Drawing.Point(1305, 807);
+            this.groupRunMode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupRunMode.Name = "groupRunMode";
-            this.groupRunMode.Size = new System.Drawing.Size(314, 147);
+            this.groupRunMode.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupRunMode.Size = new System.Drawing.Size(471, 220);
             this.groupRunMode.TabIndex = 69;
             this.groupRunMode.TabStop = false;
             this.groupRunMode.Text = "Режим работы";
@@ -373,19 +394,20 @@
             // textBox12
             // 
             this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox12.Location = new System.Drawing.Point(188, 66);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox12.Location = new System.Drawing.Point(282, 99);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(119, 23);
+            this.textBox12.Size = new System.Drawing.Size(176, 30);
             this.textBox12.TabIndex = 55;
             this.textBox12.Text = "192.168.1.47";
             // 
             // btnOLPdone
             // 
             this.btnOLPdone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOLPdone.Location = new System.Drawing.Point(159, 23);
+            this.btnOLPdone.Location = new System.Drawing.Point(238, 34);
+            this.btnOLPdone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOLPdone.Name = "btnOLPdone";
-            this.btnOLPdone.Size = new System.Drawing.Size(148, 32);
+            this.btnOLPdone.Size = new System.Drawing.Size(222, 48);
             this.btnOLPdone.TabIndex = 0;
             this.btnOLPdone.Text = "Сгенерировать код";
             this.btnOLPdone.Click += new System.EventHandler(this.btnOLPdone_Click);
@@ -394,9 +416,10 @@
             // 
             this.rad_RunMode_Simulation.AutoSize = true;
             this.rad_RunMode_Simulation.ForeColor = System.Drawing.Color.White;
-            this.rad_RunMode_Simulation.Location = new System.Drawing.Point(7, 109);
+            this.rad_RunMode_Simulation.Location = new System.Drawing.Point(10, 164);
+            this.rad_RunMode_Simulation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rad_RunMode_Simulation.Name = "rad_RunMode_Simulation";
-            this.rad_RunMode_Simulation.Size = new System.Drawing.Size(98, 20);
+            this.rad_RunMode_Simulation.Size = new System.Drawing.Size(144, 29);
             this.rad_RunMode_Simulation.TabIndex = 49;
             this.rad_RunMode_Simulation.TabStop = true;
             this.rad_RunMode_Simulation.Text = "Симуляция";
@@ -407,9 +430,10 @@
             // 
             this.rad_RunMode_Online.AutoSize = true;
             this.rad_RunMode_Online.ForeColor = System.Drawing.Color.White;
-            this.rad_RunMode_Online.Location = new System.Drawing.Point(7, 67);
+            this.rad_RunMode_Online.Location = new System.Drawing.Point(10, 100);
+            this.rad_RunMode_Online.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rad_RunMode_Online.Name = "rad_RunMode_Online";
-            this.rad_RunMode_Online.Size = new System.Drawing.Size(177, 20);
+            this.rad_RunMode_Online.Size = new System.Drawing.Size(250, 29);
             this.rad_RunMode_Online.TabIndex = 47;
             this.rad_RunMode_Online.TabStop = true;
             this.rad_RunMode_Online.Text = "Выполнение на роботе";
@@ -420,9 +444,10 @@
             // 
             this.rad_RunMode_Program.AutoSize = true;
             this.rad_RunMode_Program.ForeColor = System.Drawing.Color.White;
-            this.rad_RunMode_Program.Location = new System.Drawing.Point(7, 21);
+            this.rad_RunMode_Program.Location = new System.Drawing.Point(10, 32);
+            this.rad_RunMode_Program.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rad_RunMode_Program.Name = "rad_RunMode_Program";
-            this.rad_RunMode_Program.Size = new System.Drawing.Size(154, 36);
+            this.rad_RunMode_Program.Size = new System.Drawing.Size(219, 54);
             this.rad_RunMode_Program.TabIndex = 48;
             this.rad_RunMode_Program.TabStop = true;
             this.rad_RunMode_Program.Text = "Оффлайн\r\nпрограммирование";
@@ -450,9 +475,11 @@
             this.groupIncrementalMove.Controls.Add(this.btnRXpos);
             this.groupIncrementalMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupIncrementalMove.ForeColor = System.Drawing.Color.White;
-            this.groupIncrementalMove.Location = new System.Drawing.Point(556, 538);
+            this.groupIncrementalMove.Location = new System.Drawing.Point(834, 807);
+            this.groupIncrementalMove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupIncrementalMove.Name = "groupIncrementalMove";
-            this.groupIncrementalMove.Size = new System.Drawing.Size(207, 448);
+            this.groupIncrementalMove.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupIncrementalMove.Size = new System.Drawing.Size(310, 672);
             this.groupIncrementalMove.TabIndex = 68;
             this.groupIncrementalMove.TabStop = false;
             this.groupIncrementalMove.Text = "Инкрементное перемещение";
@@ -460,12 +487,13 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(156, 19);
+            this.trackBar1.Location = new System.Drawing.Point(234, 28);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar1.Size = new System.Drawing.Size(45, 421);
+            this.trackBar1.Size = new System.Drawing.Size(69, 632);
             this.trackBar1.TabIndex = 50;
             this.trackBar1.Value = 50;
             this.trackBar1.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
@@ -474,10 +502,10 @@
             // 
             this.btnTXneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTXneg.ForeColor = System.Drawing.Color.White;
-            this.btnTXneg.Location = new System.Drawing.Point(14, 127);
-            this.btnTXneg.Margin = new System.Windows.Forms.Padding(1);
+            this.btnTXneg.Location = new System.Drawing.Point(21, 190);
+            this.btnTXneg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTXneg.Name = "btnTXneg";
-            this.btnTXneg.Size = new System.Drawing.Size(67, 40);
+            this.btnTXneg.Size = new System.Drawing.Size(100, 60);
             this.btnTXneg.TabIndex = 49;
             this.btnTXneg.Text = "X-";
             this.btnTXneg.UseVisualStyleBackColor = true;
@@ -492,23 +520,25 @@
             0,
             0,
             0});
-            this.numStep.Location = new System.Drawing.Point(89, 93);
+            this.numStep.Location = new System.Drawing.Point(134, 140);
+            this.numStep.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numStep.Maximum = new decimal(new int[] {
             2000,
             0,
             0,
             0});
             this.numStep.Name = "numStep";
-            this.numStep.Size = new System.Drawing.Size(67, 26);
+            this.numStep.Size = new System.Drawing.Size(100, 35);
             this.numStep.TabIndex = 48;
             // 
             // lblstepIncrement
             // 
             this.lblstepIncrement.AutoSize = true;
             this.lblstepIncrement.ForeColor = System.Drawing.Color.White;
-            this.lblstepIncrement.Location = new System.Drawing.Point(6, 98);
+            this.lblstepIncrement.Location = new System.Drawing.Point(9, 147);
+            this.lblstepIncrement.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblstepIncrement.Name = "lblstepIncrement";
-            this.lblstepIncrement.Size = new System.Drawing.Size(83, 16);
+            this.lblstepIncrement.Size = new System.Drawing.Size(130, 25);
             this.lblstepIncrement.TabIndex = 47;
             this.lblstepIncrement.Text = "Шаг (мм/гр):";
             // 
@@ -516,9 +546,10 @@
             // 
             this.rad_Move_Joints.AutoSize = true;
             this.rad_Move_Joints.ForeColor = System.Drawing.Color.White;
-            this.rad_Move_Joints.Location = new System.Drawing.Point(8, 67);
+            this.rad_Move_Joints.Location = new System.Drawing.Point(12, 100);
+            this.rad_Move_Joints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rad_Move_Joints.Name = "rad_Move_Joints";
-            this.rad_Move_Joints.Size = new System.Drawing.Size(81, 20);
+            this.rad_Move_Joints.Size = new System.Drawing.Size(112, 29);
             this.rad_Move_Joints.TabIndex = 2;
             this.rad_Move_Joints.Text = "Угловое";
             this.rad_Move_Joints.UseVisualStyleBackColor = true;
@@ -529,9 +560,10 @@
             this.rad_Move_wrt_Tool.AutoSize = true;
             this.rad_Move_wrt_Tool.Checked = true;
             this.rad_Move_wrt_Tool.ForeColor = System.Drawing.Color.White;
-            this.rad_Move_wrt_Tool.Location = new System.Drawing.Point(8, 41);
+            this.rad_Move_wrt_Tool.Location = new System.Drawing.Point(12, 62);
+            this.rad_Move_wrt_Tool.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rad_Move_wrt_Tool.Name = "rad_Move_wrt_Tool";
-            this.rad_Move_wrt_Tool.Size = new System.Drawing.Size(136, 20);
+            this.rad_Move_wrt_Tool.Size = new System.Drawing.Size(193, 29);
             this.rad_Move_wrt_Tool.TabIndex = 1;
             this.rad_Move_wrt_Tool.TabStop = true;
             this.rad_Move_wrt_Tool.Text = "В декартовой СК";
@@ -542,10 +574,10 @@
             // 
             this.btnTXpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTXpos.ForeColor = System.Drawing.Color.White;
-            this.btnTXpos.Location = new System.Drawing.Point(83, 127);
-            this.btnTXpos.Margin = new System.Windows.Forms.Padding(1);
+            this.btnTXpos.Location = new System.Drawing.Point(124, 190);
+            this.btnTXpos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTXpos.Name = "btnTXpos";
-            this.btnTXpos.Size = new System.Drawing.Size(67, 40);
+            this.btnTXpos.Size = new System.Drawing.Size(100, 60);
             this.btnTXpos.TabIndex = 28;
             this.btnTXpos.Text = "X+";
             this.btnTXpos.UseVisualStyleBackColor = true;
@@ -555,10 +587,10 @@
             // 
             this.btnTYneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTYneg.ForeColor = System.Drawing.Color.White;
-            this.btnTYneg.Location = new System.Drawing.Point(14, 180);
-            this.btnTYneg.Margin = new System.Windows.Forms.Padding(1);
+            this.btnTYneg.Location = new System.Drawing.Point(21, 270);
+            this.btnTYneg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTYneg.Name = "btnTYneg";
-            this.btnTYneg.Size = new System.Drawing.Size(67, 40);
+            this.btnTYneg.Size = new System.Drawing.Size(100, 60);
             this.btnTYneg.TabIndex = 29;
             this.btnTYneg.Text = "Y-";
             this.btnTYneg.UseVisualStyleBackColor = true;
@@ -568,10 +600,10 @@
             // 
             this.btnTYpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTYpos.ForeColor = System.Drawing.Color.White;
-            this.btnTYpos.Location = new System.Drawing.Point(83, 180);
-            this.btnTYpos.Margin = new System.Windows.Forms.Padding(1);
+            this.btnTYpos.Location = new System.Drawing.Point(124, 270);
+            this.btnTYpos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTYpos.Name = "btnTYpos";
-            this.btnTYpos.Size = new System.Drawing.Size(67, 40);
+            this.btnTYpos.Size = new System.Drawing.Size(100, 60);
             this.btnTYpos.TabIndex = 30;
             this.btnTYpos.Text = "Y+";
             this.btnTYpos.UseVisualStyleBackColor = true;
@@ -581,10 +613,10 @@
             // 
             this.btnRZpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRZpos.ForeColor = System.Drawing.Color.White;
-            this.btnRZpos.Location = new System.Drawing.Point(83, 395);
-            this.btnRZpos.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRZpos.Location = new System.Drawing.Point(124, 592);
+            this.btnRZpos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRZpos.Name = "btnRZpos";
-            this.btnRZpos.Size = new System.Drawing.Size(67, 40);
+            this.btnRZpos.Size = new System.Drawing.Size(100, 60);
             this.btnRZpos.TabIndex = 38;
             this.btnRZpos.Text = "rZ+";
             this.btnRZpos.UseVisualStyleBackColor = true;
@@ -594,10 +626,10 @@
             // 
             this.btnTZneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTZneg.ForeColor = System.Drawing.Color.White;
-            this.btnTZneg.Location = new System.Drawing.Point(14, 234);
-            this.btnTZneg.Margin = new System.Windows.Forms.Padding(1);
+            this.btnTZneg.Location = new System.Drawing.Point(21, 351);
+            this.btnTZneg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTZneg.Name = "btnTZneg";
-            this.btnTZneg.Size = new System.Drawing.Size(67, 43);
+            this.btnTZneg.Size = new System.Drawing.Size(100, 64);
             this.btnTZneg.TabIndex = 31;
             this.btnTZneg.Text = "Z-";
             this.btnTZneg.UseVisualStyleBackColor = true;
@@ -607,10 +639,10 @@
             // 
             this.btnRZneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRZneg.ForeColor = System.Drawing.Color.White;
-            this.btnRZneg.Location = new System.Drawing.Point(14, 395);
-            this.btnRZneg.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRZneg.Location = new System.Drawing.Point(21, 592);
+            this.btnRZneg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRZneg.Name = "btnRZneg";
-            this.btnRZneg.Size = new System.Drawing.Size(67, 40);
+            this.btnRZneg.Size = new System.Drawing.Size(100, 60);
             this.btnRZneg.TabIndex = 37;
             this.btnRZneg.Text = "rZ-";
             this.btnRZneg.UseVisualStyleBackColor = true;
@@ -620,10 +652,10 @@
             // 
             this.btnTZpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTZpos.ForeColor = System.Drawing.Color.White;
-            this.btnTZpos.Location = new System.Drawing.Point(83, 234);
-            this.btnTZpos.Margin = new System.Windows.Forms.Padding(1);
+            this.btnTZpos.Location = new System.Drawing.Point(124, 351);
+            this.btnTZpos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTZpos.Name = "btnTZpos";
-            this.btnTZpos.Size = new System.Drawing.Size(67, 43);
+            this.btnTZpos.Size = new System.Drawing.Size(100, 64);
             this.btnTZpos.TabIndex = 32;
             this.btnTZpos.Text = "Z+";
             this.btnTZpos.UseVisualStyleBackColor = true;
@@ -633,10 +665,10 @@
             // 
             this.btnRYpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRYpos.ForeColor = System.Drawing.Color.White;
-            this.btnRYpos.Location = new System.Drawing.Point(83, 345);
-            this.btnRYpos.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRYpos.Location = new System.Drawing.Point(124, 518);
+            this.btnRYpos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRYpos.Name = "btnRYpos";
-            this.btnRYpos.Size = new System.Drawing.Size(67, 40);
+            this.btnRYpos.Size = new System.Drawing.Size(100, 60);
             this.btnRYpos.TabIndex = 36;
             this.btnRYpos.Text = "rY+";
             this.btnRYpos.UseVisualStyleBackColor = true;
@@ -646,10 +678,10 @@
             // 
             this.btnRXneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRXneg.ForeColor = System.Drawing.Color.White;
-            this.btnRXneg.Location = new System.Drawing.Point(14, 292);
-            this.btnRXneg.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRXneg.Location = new System.Drawing.Point(21, 438);
+            this.btnRXneg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRXneg.Name = "btnRXneg";
-            this.btnRXneg.Size = new System.Drawing.Size(67, 40);
+            this.btnRXneg.Size = new System.Drawing.Size(100, 60);
             this.btnRXneg.TabIndex = 33;
             this.btnRXneg.Text = "rX-";
             this.btnRXneg.UseVisualStyleBackColor = true;
@@ -659,10 +691,10 @@
             // 
             this.btnRYneg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRYneg.ForeColor = System.Drawing.Color.White;
-            this.btnRYneg.Location = new System.Drawing.Point(14, 345);
-            this.btnRYneg.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRYneg.Location = new System.Drawing.Point(21, 518);
+            this.btnRYneg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRYneg.Name = "btnRYneg";
-            this.btnRYneg.Size = new System.Drawing.Size(67, 40);
+            this.btnRYneg.Size = new System.Drawing.Size(100, 60);
             this.btnRYneg.TabIndex = 35;
             this.btnRYneg.Text = "rY-";
             this.btnRYneg.UseVisualStyleBackColor = true;
@@ -672,10 +704,10 @@
             // 
             this.btnRXpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRXpos.ForeColor = System.Drawing.Color.White;
-            this.btnRXpos.Location = new System.Drawing.Point(83, 292);
-            this.btnRXpos.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRXpos.Location = new System.Drawing.Point(124, 438);
+            this.btnRXpos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRXpos.Name = "btnRXpos";
-            this.btnRXpos.Size = new System.Drawing.Size(67, 40);
+            this.btnRXpos.Size = new System.Drawing.Size(100, 60);
             this.btnRXpos.TabIndex = 34;
             this.btnRXpos.Text = "rX+";
             this.btnRXpos.UseVisualStyleBackColor = true;
@@ -686,9 +718,10 @@
             this.btnRunTestProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunTestProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnRunTestProgram.ForeColor = System.Drawing.Color.White;
-            this.btnRunTestProgram.Location = new System.Drawing.Point(769, 761);
+            this.btnRunTestProgram.Location = new System.Drawing.Point(1154, 1142);
+            this.btnRunTestProgram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRunTestProgram.Name = "btnRunTestProgram";
-            this.btnRunTestProgram.Size = new System.Drawing.Size(97, 64);
+            this.btnRunTestProgram.Size = new System.Drawing.Size(146, 96);
             this.btnRunTestProgram.TabIndex = 65;
             this.btnRunTestProgram.Text = "Запустить тестовую программу";
             this.btnRunTestProgram.UseVisualStyleBackColor = true;
@@ -699,10 +732,10 @@
             this.btnSelectStation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelectStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSelectStation.ForeColor = System.Drawing.Color.White;
-            this.btnSelectStation.Location = new System.Drawing.Point(769, 643);
-            this.btnSelectStation.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSelectStation.Location = new System.Drawing.Point(1154, 964);
+            this.btnSelectStation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSelectStation.Name = "btnSelectStation";
-            this.btnSelectStation.Size = new System.Drawing.Size(97, 42);
+            this.btnSelectStation.Size = new System.Drawing.Size(146, 63);
             this.btnSelectStation.TabIndex = 64;
             this.btnSelectStation.Text = "Сменить робота";
             this.btnSelectStation.UseVisualStyleBackColor = true;
@@ -713,10 +746,10 @@
             this.btnMovePose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMovePose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnMovePose.ForeColor = System.Drawing.Color.White;
-            this.btnMovePose.Location = new System.Drawing.Point(1068, 846);
-            this.btnMovePose.Margin = new System.Windows.Forms.Padding(1);
+            this.btnMovePose.Location = new System.Drawing.Point(1602, 1269);
+            this.btnMovePose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMovePose.Name = "btnMovePose";
-            this.btnMovePose.Size = new System.Drawing.Size(116, 138);
+            this.btnMovePose.Size = new System.Drawing.Size(174, 207);
             this.btnMovePose.TabIndex = 56;
             this.btnMovePose.Text = "Переместить робота в указанную позицию";
             this.btnMovePose.UseVisualStyleBackColor = true;
@@ -727,10 +760,10 @@
             this.btnGetJoints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGetJoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnGetJoints.ForeColor = System.Drawing.Color.White;
-            this.btnGetJoints.Location = new System.Drawing.Point(769, 843);
-            this.btnGetJoints.Margin = new System.Windows.Forms.Padding(1);
+            this.btnGetJoints.Location = new System.Drawing.Point(1154, 1264);
+            this.btnGetJoints.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGetJoints.Name = "btnGetJoints";
-            this.btnGetJoints.Size = new System.Drawing.Size(77, 145);
+            this.btnGetJoints.Size = new System.Drawing.Size(116, 218);
             this.btnGetJoints.TabIndex = 55;
             this.btnGetJoints.Text = "Текущая позиция робота";
             this.btnGetJoints.UseVisualStyleBackColor = true;
@@ -739,10 +772,10 @@
             // txtPosition
             // 
             this.txtPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtPosition.Location = new System.Drawing.Point(861, 853);
-            this.txtPosition.Margin = new System.Windows.Forms.Padding(1);
+            this.txtPosition.Location = new System.Drawing.Point(1292, 1280);
+            this.txtPosition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(203, 22);
+            this.txtPosition.Size = new System.Drawing.Size(302, 30);
             this.txtPosition.TabIndex = 54;
             this.txtPosition.Text = "0 , -90 , 90 , 0 , 90 , 90";
             // 
@@ -751,10 +784,10 @@
             this.lblJ1.AutoSize = true;
             this.lblJ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblJ1.ForeColor = System.Drawing.Color.White;
-            this.lblJ1.Location = new System.Drawing.Point(921, 836);
-            this.lblJ1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lblJ1.Location = new System.Drawing.Point(1382, 1254);
+            this.lblJ1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJ1.Name = "lblJ1";
-            this.lblJ1.Size = new System.Drawing.Size(80, 16);
+            this.lblJ1.Size = new System.Drawing.Size(124, 25);
             this.lblJ1.TabIndex = 53;
             this.lblJ1.Text = "x, y, z, a, b, c";
             // 
@@ -763,9 +796,10 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.notifybar});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 989);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1555);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1904, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(2371, 30);
             this.statusStrip1.TabIndex = 72;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -773,7 +807,7 @@
             // 
             this.notifybar.ForeColor = System.Drawing.Color.White;
             this.notifybar.Name = "notifybar";
-            this.notifybar.Size = new System.Drawing.Size(95, 17);
+            this.notifybar.Size = new System.Drawing.Size(142, 25);
             this.notifybar.Text = "Notification area";
             // 
             // button4
@@ -781,9 +815,10 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(769, 547);
+            this.button4.Location = new System.Drawing.Point(1154, 820);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 94);
+            this.button4.Size = new System.Drawing.Size(146, 141);
             this.button4.TabIndex = 73;
             this.button4.Text = "Запустить RoboDK API";
             this.button4.UseVisualStyleBackColor = true;
@@ -827,19 +862,22 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(6, 711);
+            this.groupBox1.Location = new System.Drawing.Point(9, 1066);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(544, 275);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(816, 412);
             this.groupBox1.TabIndex = 74;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Калибровка";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(347, 200);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox13.Location = new System.Drawing.Point(520, 300);
+            this.textBox13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(38, 22);
+            this.textBox13.Size = new System.Drawing.Size(55, 30);
             this.textBox13.TabIndex = 105;
             this.textBox13.Text = "170";
             // 
@@ -847,10 +885,10 @@
             // 
             this.label25.AutoSize = true;
             this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(307, 206);
-            this.label25.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label25.Location = new System.Drawing.Point(460, 309);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(38, 16);
+            this.label25.Size = new System.Drawing.Size(54, 25);
             this.label25.TabIndex = 104;
             this.label25.Text = "delta";
             // 
@@ -858,31 +896,89 @@
             // 
             this.label24.AutoSize = true;
             this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(322, 82);
-            this.label24.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label24.Location = new System.Drawing.Point(483, 123);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(26, 16);
+            this.label24.Size = new System.Drawing.Size(46, 25);
             this.label24.TabIndex = 103;
             this.label24.Text = "мм";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.radioButton2);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(568, 32);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(218, 134);
+            this.groupBox2.TabIndex = 80;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Захват";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(6, 28);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(133, 25);
+            this.label10.TabIndex = 81;
+            this.label10.Text = "Ориентация:";
+            this.label10.Click += new System.EventHandler(this.Label10_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.ForeColor = System.Drawing.Color.White;
+            this.radioButton1.Location = new System.Drawing.Point(9, 92);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(191, 29);
+            this.radioButton1.TabIndex = 80;
+            this.radioButton1.Text = "Горизонтальная";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.ForeColor = System.Drawing.Color.White;
+            this.radioButton2.Location = new System.Drawing.Point(9, 58);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(168, 29);
+            this.radioButton2.TabIndex = 82;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Вертикальная";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(322, 56);
-            this.label23.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label23.Location = new System.Drawing.Point(483, 84);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(26, 16);
+            this.label23.Size = new System.Drawing.Size(46, 25);
             this.label23.TabIndex = 102;
             this.label23.Text = "мм";
             // 
             // trackBar2
             // 
-            this.trackBar2.Location = new System.Drawing.Point(148, 226);
+            this.trackBar2.Location = new System.Drawing.Point(222, 339);
+            this.trackBar2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.trackBar2.Maximum = 254;
             this.trackBar2.Minimum = 10;
             this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(390, 45);
+            this.trackBar2.Size = new System.Drawing.Size(585, 69);
             this.trackBar2.TabIndex = 101;
             this.trackBar2.Value = 170;
             this.trackBar2.Scroll += new System.EventHandler(this.TrackBar2_Scroll);
@@ -892,10 +988,10 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(8, 134);
-            this.label22.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label22.Location = new System.Drawing.Point(12, 201);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(122, 13);
+            this.label22.Size = new System.Drawing.Size(200, 20);
             this.label22.TabIndex = 100;
             this.label22.Text = "по положению в кадре";
             this.label22.Click += new System.EventHandler(this.Label22_Click);
@@ -904,10 +1000,10 @@
             // 
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(100, 188);
-            this.label21.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label21.Location = new System.Drawing.Point(150, 282);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(26, 16);
+            this.label21.Size = new System.Drawing.Size(46, 25);
             this.label21.TabIndex = 99;
             this.label21.Text = "мм";
             // 
@@ -915,10 +1011,10 @@
             // 
             this.label20.AutoSize = true;
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(100, 163);
-            this.label20.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label20.Location = new System.Drawing.Point(150, 244);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(26, 16);
+            this.label20.Size = new System.Drawing.Size(46, 25);
             this.label20.TabIndex = 98;
             this.label20.Text = "мм";
             // 
@@ -926,10 +1022,10 @@
             // 
             this.label19.AutoSize = true;
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(322, 31);
-            this.label19.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label19.Location = new System.Drawing.Point(483, 46);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(26, 16);
+            this.label19.Size = new System.Drawing.Size(46, 25);
             this.label19.TabIndex = 97;
             this.label19.Text = "мм";
             // 
@@ -937,59 +1033,60 @@
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(149, 31);
-            this.label18.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label18.Location = new System.Drawing.Point(224, 46);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(124, 16);
+            this.label18.Size = new System.Drawing.Size(177, 25);
             this.label18.TabIndex = 96;
             this.label18.Text = "Размер объектов";
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(275, 25);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox11.Location = new System.Drawing.Point(412, 38);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(38, 22);
+            this.textBox11.Size = new System.Drawing.Size(55, 30);
             this.textBox11.TabIndex = 95;
-            this.textBox11.Text = "20";
+            this.textBox11.Text = "70";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(8, 190);
-            this.label15.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label15.Location = new System.Drawing.Point(12, 285);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(56, 16);
+            this.label15.Size = new System.Drawing.Size(81, 25);
             this.label15.TabIndex = 94;
             this.label15.Text = "Высота";
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(69, 187);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox9.Location = new System.Drawing.Point(104, 280);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(29, 22);
+            this.textBox9.Size = new System.Drawing.Size(42, 30);
             this.textBox9.TabIndex = 93;
-            this.textBox9.Text = "110";
+            this.textBox9.Text = "280";
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(69, 160);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox10.Location = new System.Drawing.Point(104, 240);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(29, 22);
+            this.textBox10.Size = new System.Drawing.Size(42, 30);
             this.textBox10.TabIndex = 92;
-            this.textBox10.Text = "160";
+            this.textBox10.Text = "195";
+            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(8, 160);
-            this.label16.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label16.Location = new System.Drawing.Point(12, 240);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(59, 16);
+            this.label16.Size = new System.Drawing.Size(82, 25);
             this.label16.TabIndex = 91;
             this.label16.Text = "Ширина";
             // 
@@ -997,10 +1094,10 @@
             // 
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(8, 119);
-            this.label17.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label17.Location = new System.Drawing.Point(12, 178);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(94, 16);
+            this.label17.Size = new System.Drawing.Size(136, 25);
             this.label17.TabIndex = 90;
             this.label17.Text = "Размер зоны";
             // 
@@ -1008,28 +1105,28 @@
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(34, 83);
-            this.label14.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label14.Location = new System.Drawing.Point(51, 124);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(17, 16);
+            this.label14.Size = new System.Drawing.Size(25, 25);
             this.label14.TabIndex = 89;
             this.label14.Text = "Y";
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(53, 80);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox8.Location = new System.Drawing.Point(80, 120);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(49, 22);
+            this.textBox8.Size = new System.Drawing.Size(72, 30);
             this.textBox8.TabIndex = 88;
-            this.textBox8.Text = "44";
+            this.textBox8.Text = "-200";
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(53, 49);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox7.Location = new System.Drawing.Point(80, 74);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(49, 22);
+            this.textBox7.Size = new System.Drawing.Size(72, 30);
             this.textBox7.TabIndex = 87;
             this.textBox7.Text = "226";
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
@@ -1038,10 +1135,10 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(35, 52);
-            this.label13.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label13.Location = new System.Drawing.Point(52, 78);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(16, 16);
+            this.label13.Size = new System.Drawing.Size(26, 25);
             this.label13.TabIndex = 86;
             this.label13.Text = "X";
             // 
@@ -1049,10 +1146,10 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(7, 25);
-            this.label12.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label12.Location = new System.Drawing.Point(10, 38);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(119, 16);
+            this.label12.Size = new System.Drawing.Size(173, 25);
             this.label12.TabIndex = 85;
             this.label12.Text = "Положение зоны";
             // 
@@ -1060,29 +1157,30 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(149, 81);
-            this.label11.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label11.Location = new System.Drawing.Point(224, 122);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(120, 16);
+            this.label11.Size = new System.Drawing.Size(166, 25);
             this.label11.TabIndex = 84;
             this.label11.Text = "Уровень захвата";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(275, 78);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox5.Location = new System.Drawing.Point(412, 117);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(38, 22);
+            this.textBox5.Size = new System.Drawing.Size(55, 30);
             this.textBox5.TabIndex = 83;
-            this.textBox5.Text = "40";
+            this.textBox5.Text = "140";
             // 
             // button5
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(6, 222);
+            this.button5.Location = new System.Drawing.Point(9, 333);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(136, 49);
+            this.button5.Size = new System.Drawing.Size(204, 74);
             this.button5.TabIndex = 75;
             this.button5.Text = "Задать";
             this.button5.UseVisualStyleBackColor = true;
@@ -1092,10 +1190,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(151, 56);
-            this.label9.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label9.Location = new System.Drawing.Point(226, 84);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(122, 16);
+            this.label9.Size = new System.Drawing.Size(172, 25);
             this.label9.TabIndex = 79;
             this.label9.Text = "Высота переноса";
             // 
@@ -1103,10 +1201,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(153, 115);
-            this.label8.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label8.Location = new System.Drawing.Point(230, 172);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 16);
+            this.label8.Size = new System.Drawing.Size(163, 25);
             this.label8.TabIndex = 78;
             this.label8.Text = "Точка разгрузки";
             // 
@@ -1114,10 +1212,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(180, 196);
-            this.label7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label7.Location = new System.Drawing.Point(270, 294);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(16, 16);
+            this.label7.Size = new System.Drawing.Size(24, 25);
             this.label7.TabIndex = 77;
             this.label7.Text = "Z";
             // 
@@ -1125,10 +1223,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(180, 167);
-            this.label6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label6.Location = new System.Drawing.Point(270, 250);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(17, 16);
+            this.label6.Size = new System.Drawing.Size(25, 25);
             this.label6.TabIndex = 76;
             this.label6.Text = "Y";
             // 
@@ -1136,46 +1234,46 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(180, 140);
-            this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label4.Location = new System.Drawing.Point(270, 210);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(16, 16);
+            this.label4.Size = new System.Drawing.Size(26, 25);
             this.label4.TabIndex = 75;
             this.label4.Text = "X";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(275, 53);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox4.Location = new System.Drawing.Point(412, 80);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(38, 22);
+            this.textBox4.Size = new System.Drawing.Size(55, 30);
             this.textBox4.TabIndex = 62;
             this.textBox4.Text = "300";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(198, 193);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox3.Location = new System.Drawing.Point(297, 290);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(38, 22);
+            this.textBox3.Size = new System.Drawing.Size(55, 30);
             this.textBox3.TabIndex = 61;
             this.textBox3.Text = "40";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(198, 164);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox2.Location = new System.Drawing.Point(297, 246);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(38, 22);
+            this.textBox2.Size = new System.Drawing.Size(55, 30);
             this.textBox2.TabIndex = 60;
             this.textBox2.Text = "-500";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(198, 137);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox1.Location = new System.Drawing.Point(297, 206);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(38, 22);
+            this.textBox1.Size = new System.Drawing.Size(55, 30);
             this.textBox1.TabIndex = 59;
             this.textBox1.Text = "0";
             // 
@@ -1183,9 +1281,10 @@
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.ForeColor = System.Drawing.Color.White;
-            this.radioButton4.Location = new System.Drawing.Point(132, 53);
+            this.radioButton4.Location = new System.Drawing.Point(198, 80);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(244, 20);
+            this.radioButton4.Size = new System.Drawing.Size(349, 29);
             this.radioButton4.TabIndex = 101;
             this.radioButton4.Text = "Несколько объектов (Reconition2)";
             this.radioButton4.UseVisualStyleBackColor = true;
@@ -1195,59 +1294,22 @@
             this.radioButton3.AutoSize = true;
             this.radioButton3.Checked = true;
             this.radioButton3.ForeColor = System.Drawing.Color.White;
-            this.radioButton3.Location = new System.Drawing.Point(132, 21);
+            this.radioButton3.Location = new System.Drawing.Point(198, 32);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(192, 20);
+            this.radioButton3.Size = new System.Drawing.Size(279, 29);
             this.radioButton3.TabIndex = 100;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Один объект (Reconition1)";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(6, 39);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(119, 20);
-            this.radioButton2.TabIndex = 82;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Вертикальная";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(4, 19);
-            this.label10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 16);
-            this.label10.TabIndex = 81;
-            this.label10.Text = "Ориентация:";
-            this.label10.Click += new System.EventHandler(this.Label10_Click);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(6, 61);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(134, 20);
-            this.radioButton1.TabIndex = 80;
-            this.radioButton1.Text = "Горизонтальная";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.Location = new System.Drawing.Point(861, 951);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox6.Location = new System.Drawing.Point(1292, 1426);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(203, 22);
+            this.textBox6.Size = new System.Drawing.Size(302, 30);
             this.textBox6.TabIndex = 75;
             this.textBox6.Text = "0 , -90 , 90 , 0 , 90 , 90";
             // 
@@ -1256,10 +1318,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(889, 926);
-            this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label5.Location = new System.Drawing.Point(1334, 1389);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 16);
+            this.label5.Size = new System.Drawing.Size(212, 25);
             this.label5.TabIndex = 76;
             this.label5.Text = "A1, A2, A3, A4, A5, A6";
             // 
@@ -1270,9 +1332,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(892, 705);
+            this.button1.Location = new System.Drawing.Point(1338, 1058);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 90);
+            this.button1.Size = new System.Drawing.Size(177, 135);
             this.button1.TabIndex = 77;
             this.button1.Text = "Собрать объекты";
             this.button1.UseVisualStyleBackColor = false;
@@ -1282,9 +1345,10 @@
             // 
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(6, 21);
+            this.button6.Location = new System.Drawing.Point(9, 32);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(120, 84);
+            this.button6.Size = new System.Drawing.Size(180, 126);
             this.button6.TabIndex = 78;
             this.button6.Text = "Запустить таймер";
             this.button6.UseVisualStyleBackColor = true;
@@ -1294,28 +1358,14 @@
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(6, 111);
+            this.button7.Location = new System.Drawing.Point(9, 166);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(120, 52);
+            this.button7.Size = new System.Drawing.Size(180, 78);
             this.button7.TabIndex = 79;
             this.button7.Text = "Остановаить таймер";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(379, 21);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(145, 89);
-            this.groupBox2.TabIndex = 80;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Захват";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // groupBox3
             // 
@@ -1329,9 +1379,11 @@
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(6, 538);
+            this.groupBox3.Location = new System.Drawing.Point(9, 807);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(544, 167);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(816, 250);
             this.groupBox3.TabIndex = 102;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Распознавание";
@@ -1339,9 +1391,10 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(152, 118);
+            this.checkBox2.Location = new System.Drawing.Point(228, 177);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(157, 36);
+            this.checkBox2.Size = new System.Drawing.Size(229, 54);
             this.checkBox2.TabIndex = 103;
             this.checkBox2.Text = "Отображать объект\r\n в RDK";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -1349,9 +1402,10 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(152, 94);
+            this.checkBox1.Location = new System.Drawing.Point(228, 141);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(151, 20);
+            this.checkBox1.Size = new System.Drawing.Size(218, 29);
             this.checkBox1.TabIndex = 102;
             this.checkBox1.Text = "Режим калибровки";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -1363,9 +1417,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_rdk.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel_rdk.BackColor = System.Drawing.Color.Transparent;
-            this.panel_rdk.Location = new System.Drawing.Point(1194, 5);
+            this.panel_rdk.Location = new System.Drawing.Point(1791, 8);
+            this.panel_rdk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel_rdk.Name = "panel_rdk";
-            this.panel_rdk.Size = new System.Drawing.Size(710, 977);
+            this.panel_rdk.Size = new System.Drawing.Size(1512, 2001);
             this.panel_rdk.TabIndex = 71;
             this.panel_rdk.SizeChanged += new System.EventHandler(this.panel_Resized);
             this.panel_rdk.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_rdk_Paint);
@@ -1377,10 +1432,10 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(1058, 705);
-            this.button8.Margin = new System.Windows.Forms.Padding(1);
+            this.button8.Location = new System.Drawing.Point(1587, 1058);
+            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(105, 90);
+            this.button8.Size = new System.Drawing.Size(158, 135);
             this.button8.TabIndex = 103;
             this.button8.Text = "Стоп";
             this.button8.UseVisualStyleBackColor = false;
@@ -1388,10 +1443,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(1904, 1011);
+            this.ClientSize = new System.Drawing.Size(2371, 1585);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.panel_rdk);
@@ -1423,6 +1478,7 @@
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Lotus";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
@@ -1445,9 +1501,9 @@
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
