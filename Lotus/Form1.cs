@@ -24,7 +24,7 @@ namespace Lotus
             preview = new Preview();
             preview.ShowInTaskbar = false;
             preview.Show();
-            panel_rdk_size = new Size(710, 1000);
+            panel_rdk_size = new Size(730, 1000);
         }
 
         private int unloadingX;
@@ -52,7 +52,7 @@ namespace Lotus
         private Recognition1 recognition1;
         private Recognition2 recognition2;
         private Size panel_rdk_size;
-
+        string objectSizeText;
         private int point_count = 0;
         private List<Point> work_zone_points;
         private void button5_Click(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace Lotus
             sheetPoseInRCS = new Point(Convert.ToInt32(textBox7.Text), Convert.ToInt32(textBox8.Text));
             sheetSize = new Size(Convert.ToInt32(textBox10.Text), Convert.ToInt32(textBox9.Text));
             objectSize = Convert.ToInt32(textBox11.Text) * (work_zone_points[1].X - work_zone_points[0].X) / sheetSize.Width;
-
+            objectSizeText = textBox11.Text;
             if (recognition1 != null)
                 recognition1.objectSize = objectSize;
             if (recognition2 != null)
@@ -124,6 +124,62 @@ namespace Lotus
             {
                 work_zone_points.Add(new Point(Convert.ToInt32(line.Split(' ')[1].Split(';')[0]), Convert.ToInt32(line.Split(' ')[1].Split(';')[1])));
             }
+            try
+            {
+                var readedVars = File.ReadAllLines("saved_variables.txt");
+
+                foreach (string variable in readedVars)
+                {
+                    if (variable.Split(':')[0] == "sheetPoseInRCS.X")
+                    {
+                        textBox7.Text = variable.Split(':')[1];
+                    }
+                    if (variable.Split(':')[0] == "sheetPoseInRCS.Y")
+                    {
+                        textBox8.Text = variable.Split(':')[1];
+                    }
+
+
+                    if (variable.Split(':')[0] == "sheetSize.Width")
+                    {
+                        textBox10.Text = variable.Split(':')[1];
+                    }
+                    if (variable.Split(':')[0] == "sheetSize.Height")
+                    {
+                        textBox9.Text = variable.Split(':')[1];
+                    }
+
+
+                    if (variable.Split(':')[0] == "objectSizeText")
+                    {
+                        textBox11.Text = variable.Split(':')[1];
+                    }
+
+                    if (variable.Split(':')[0] == "unloadingX")
+                    {
+                        textBox1.Text = variable.Split(':')[1];
+                    }
+                    if (variable.Split(':')[0] == "unloadingY")
+                    {
+                        textBox2.Text = variable.Split(':')[1];
+                    }
+                    if (variable.Split(':')[0] == "unloadingZ")
+                    {
+                        textBox3.Text = variable.Split(':')[1];
+                    }
+
+                    if (variable.Split(':')[0] == "altitude")
+                    {
+                        textBox4.Text = variable.Split(':')[1];
+                    }
+                    if (variable.Split(':')[0] == "objectsLevel")
+                    {
+                        textBox5.Text = variable.Split(':')[1];
+                    }
+
+                }
+            }
+            catch { }
             button5_Click(null, null);
 
 
@@ -174,6 +230,13 @@ namespace Lotus
         {
             if (currentImage != null)
             {
+                Image toPicBox1 = currentImage;
+                Graphics g = Graphics.FromImage(toPicBox1);
+                g.DrawLine(new Pen(Color.Red, 1), work_zone_points[0].X, work_zone_points[0].Y, work_zone_points[1].X, work_zone_points[1].Y);
+                g.DrawLine(new Pen(Color.Red, 1), work_zone_points[1].X, work_zone_points[1].Y, work_zone_points[2].X, work_zone_points[2].Y);
+                g.DrawLine(new Pen(Color.Red, 1), work_zone_points[2].X, work_zone_points[2].Y, work_zone_points[3].X, work_zone_points[3].Y);
+                g.DrawLine(new Pen(Color.Red, 1), work_zone_points[3].X, work_zone_points[3].Y, work_zone_points[0].X, work_zone_points[0].Y);
+
                 if (radioButton3.Checked)
                 {
                     if (recognition1 == null)
@@ -181,8 +244,7 @@ namespace Lotus
 
                     var point = recognition1.getXpxYpx(new FastBitmap(currentImage));
 
-                    Image toPicBox1 = currentImage;
-                    Graphics g = Graphics.FromImage(toPicBox1);
+
                     if (checkBox1.Checked)
                     {
                         //отрисовка маски
@@ -216,9 +278,6 @@ namespace Lotus
                         recognition2 = new Recognition2("mask.bmp", objectSize);
                     List<Point> points = new List<Point>();
 
-                    Image toPicBox1 = currentImage;
-                    Graphics g = Graphics.FromImage(toPicBox1);
-
 
                     points = recognition2.getXpxYpx(currentImage);
 
@@ -249,9 +308,6 @@ namespace Lotus
 
                     }
 
-                    g.DrawLine(new Pen(recognition2.backAVG, 40), 0, 20, 500, 20);
-
-
                     pictureBox1.Image = toPicBox1;
                     //перевод в систему координат робота
                     pointsInRCS = new List<Point>();
@@ -263,6 +319,12 @@ namespace Lotus
                             //   g.DrawString("x = " + pointInRCS.X.ToString() + "mm ( " + point.X + "px )", new Font("Gotic", 15), Brushes.Red, 10, 50);
                             //  g.DrawString("y = " + pointInRCS.Y.ToString() + "mm ( " + point.Y + "px )", new Font("Gotic", 15), Brushes.Red, 10, 70);
                         }
+                    }
+                    int H = 50;
+                    for (int i = 0; i < points.Count; i++)
+                    {
+                        g.DrawString("x = " + pointsInRCS[i].X.ToString() + "mm ( " + points[i].X + "px )", new Font("Gotic", 15), Brushes.Red, 10, 50 + i * H);
+                        g.DrawString("y = " + pointsInRCS[i].Y.ToString() + "mm ( " + points[i].Y + "px )", new Font("Gotic", 15), Brushes.Red, 10, 70 + i * H);
                     }
                 }
             }
@@ -292,21 +354,23 @@ namespace Lotus
                                }
                                items.Clear();
                            }
+                           if (pointsInRCS != null)
+                               foreach (Point point in pointsInRCS)
+                               {
+                                   RoboDK.Item item;
+                                   item = RDK.AddFile("object.sld");
+                                   item.Scale(new double[3] { 0.3, 0.3, 0.3 });
+                                   item.setPose(Mat.FromXYZRPW(new double[6] { point.X, point.Y, 18, 90, 0, 0 }));
 
-                           foreach (Point point in pointsInRCS)
-                           {
-                               RoboDK.Item item;
-                               item = RDK.AddFile("object.sld");
-                               item.Scale(new double[3] { 0.3, 0.3, 0.3 });
-                               item.setPose(Mat.FromXYZRPW(new double[6] { point.X, point.Y, 18, 90, 0, 0 }));
+                                   ///////  MOVE TO THE OBJECT    ////
 
-                               ///////  MOVE TO THE OBJECT    ////
+                                   notifybar.Text = RobotControl.pickAndPlace(this, point, unloadingX, unloadingY, unloadingZ, objectsLevel, altitude, radioButton2.Checked);
 
-                               notifybar.Text = RobotControl.pickAndPlace(this, point, unloadingX, unloadingY, unloadingZ, objectsLevel, altitude, radioButton2.Checked);
-
-                               item.setPose(Mat.FromXYZRPW(new double[6] { unloadingX, unloadingY, unloadingZ + 18, 90, 0, 0 }));
-                               items.Add(item);
-                           }
+                                   item.setPose(Mat.FromXYZRPW(new double[6] { unloadingX, unloadingY, unloadingZ + 18, 90, 0, 0 }));
+                                   items.Add(item);
+                               }
+                           else
+                           { MessageBox.Show("Объекты отсутствуют"); }
 
                        }
                        if (wasStopped)
@@ -320,8 +384,11 @@ namespace Lotus
         //ПЕРЕВОД В СИСТЕМУ КООРДИНАТ РОБОТА////////
         private Point convertToRobotCoordinateSystem(Point point)
         {
-            double X = sheetPoseInRCS.X - sheetSize.Width * (point.X - work_zone_points[1].X) / (work_zone_points[1].X - work_zone_points[0].X);
-            double Y = sheetPoseInRCS.Y + sheetSize.Height * (point.Y - work_zone_points[0].Y) / (work_zone_points[3].Y - work_zone_points[0].Y);
+            double Y = sheetPoseInRCS.Y - (sheetSize.Height * (work_zone_points[2].Y - point.Y) / (work_zone_points[3].Y - work_zone_points[0].Y));
+            //  double T1 = 0;
+            double T1 = ((work_zone_points[2].X - work_zone_points[1].X) * (point.Y - work_zone_points[2].Y)) / (work_zone_points[1].Y - work_zone_points[2].Y);
+            double X = sheetPoseInRCS.X + (sheetSize.Width * (work_zone_points[2].X - point.X) / (work_zone_points[1].X - work_zone_points[0].X)) - T1;
+
 
             return new Point((int)(X), (int)(Y));
         }
@@ -426,8 +493,8 @@ namespace Lotus
                         work_zone_points = new List<Point>();
                     }
 
-                    var X = MousePosition.X - this.Location.X - tabControl1.Location.X - pictureBox1.Location.X - 12;
-                    var Y = MousePosition.Y - this.Location.Y - tabControl1.Location.Y - pictureBox1.Location.Y - 64;
+                    var X = MousePosition.X - this.Location.X - tabControl1.Location.X - pictureBox1.Location.X - 14;
+                    var Y = MousePosition.Y - this.Location.Y - tabControl1.Location.Y - pictureBox1.Location.Y - 54;
                     work_zone_points.Add(new Point(X, Y));
                     point_count++;
 
@@ -462,6 +529,10 @@ namespace Lotus
                             }
 
                         bmp_mask.Save("mask.bmp");
+                        if (recognition1 != null)
+                            recognition1 = new Recognition1("mask.bmp");
+                        if (recognition2 != null)
+                            recognition2 = new Recognition2("mask.bmp", objectSize);
 
                         var old = File.ReadAllLines("Work zone position.txt");
                         string[] lines = new string[4];
@@ -584,11 +655,14 @@ namespace Lotus
         private void btnMoveRobotHome_Click(object sender, EventArgs e)
         {
             if (!Check_ROBOT()) { return; }
+            Task task = new Task(() =>
+            {
+                double[] joints_home = ROBOT.JointsHome();
 
-            double[] joints_home = ROBOT.JointsHome();
+                ROBOT.MoveJ(joints_home);
+            });
 
-            ROBOT.MoveJ(joints_home);
-            btnGetJoints_Click(null, null);
+            task.Start();
         }
 
         private void btnGetJoints_Click(object sender, EventArgs e)
@@ -611,7 +685,6 @@ namespace Lotus
 
         private void btnMovePose_Click(object sender, EventArgs e)
         {
-            btnGetJoints_Click(null, null);
             // retrieve the robot position from the text and validate input
             double[] xyzwpr = String_2_Values(txtPosition.Text);
 
@@ -626,9 +699,12 @@ namespace Lotus
             {
                 notifybar.Text = "Problems moving the robot: " + rdkex.Message;
             }
-            btnGetJoints_Click(null, null);
         }
-
+        private void Timer1_Tick_1(object sender, EventArgs e)
+        {
+            if (ROBOT != null)
+                btnGetJoints_Click(null, null);
+        }
 
         /// <summary>
         /// Convert a list of numbers provided as a string to an array of values
@@ -747,10 +823,19 @@ namespace Lotus
             }
             else
             {
-                MessageBox.Show("Can't connect to the robot " + textBox12.Text + "!");
-                notifybar.Text = "Can't connect to the robot. Check connection and parameters.";
-                rad_RunMode_Simulation.AutoCheck = true;
-
+                System.Threading.Thread.Sleep(1000);
+                if (ROBOT.Connect(textBox12.Text))
+                {
+                    MessageBox.Show("Connected to " + textBox12.Text + "!");
+                    // Set to Run on Robot robot mode:
+                    RDK.setRunMode(RoboDK.RUNMODE_RUN_ROBOT);
+                }
+                else
+                {
+                    MessageBox.Show("Can't connect to the robot " + textBox12.Text + "!");
+                    notifybar.Text = "Can't connect to the robot. Check connection and parameters.";
+                    rad_RunMode_Simulation.AutoCheck = true;
+                }
             }
         }
         /// <summary>
@@ -958,7 +1043,6 @@ namespace Lotus
         private void Incremental_Move(string button_name)
         {
             if (!Check_ROBOT()) { return; }
-            btnGetJoints_Click(null, null);
             notifybar.Text = "Button selected: " + button_name;
 
             if (button_name.Length < 3)
@@ -1009,7 +1093,7 @@ namespace Lotus
 
                 int move_id = 0;
 
-                string[] move_types = new string[6] { "Tz", "Ty", "Tx", "Rx", "Ry", "Rz" };
+                string[] move_types = new string[6] { "Tx", "Ty", "Tz", "Rx", "Ry", "Rz" };
 
                 for (int i = 0; i < 6; i++)
                 {
@@ -1058,7 +1142,6 @@ namespace Lotus
 
 
             }
-            btnGetJoints_Click(null, null);
         }
 
 
@@ -1262,10 +1345,51 @@ namespace Lotus
 
         private void FormRobot_FormClosed(object sender, FormClosingEventArgs e)
         {
+
+            List<string> saveVars = new List<string>();
+
+            saveVars.Add("sheetPoseInRCS.X:" + sheetPoseInRCS.X.ToString());
+            saveVars.Add("sheetPoseInRCS.Y:" + sheetPoseInRCS.Y.ToString());
+
+            saveVars.Add("sheetSize.Width:" + sheetSize.Width.ToString());
+            saveVars.Add("sheetSize.Height:" + sheetSize.Height.ToString());
+
+            saveVars.Add("objectSizeText:" + objectSizeText.ToString());
+
+            saveVars.Add("objectsLevel:" + objectsLevel.ToString());
+
+            saveVars.Add("unloadingX:" + unloadingX.ToString());
+            saveVars.Add("unloadingY:" + unloadingY.ToString());
+            saveVars.Add("unloadingZ:" + unloadingZ.ToString());
+
+            saveVars.Add("altitude:" + altitude.ToString());
+
+            File.WriteAllLines("saved_variables.txt", saveVars.ToArray());
+
+
+
+            Disconnect();
             Disconnect();
             if (!Check_RDK()) { return; }
             RDK.CloseRoboDK();
             RDK = null;
+
+            try
+            {
+                foreach (Process proc in Process.GetProcessesByName("apikuka"))
+                {
+                    proc.Kill();
+                }
+                foreach (Process proc in Process.GetProcessesByName("Lotus"))
+                {
+                    proc.Kill();
+                }
+                foreach (Process proc in Process.GetProcessesByName("RoboDK"))
+                {
+                    proc.Kill();
+                }
+            }
+            catch { }
         }
 
         private void Form1_Shown(object sender, EventArgs e)
@@ -1511,6 +1635,13 @@ namespace Lotus
         {
 
         }
+
+        private void TextBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 
 }

@@ -1,4 +1,4 @@
-LeftUp: 107;35
-RightUp: 305;40
-RightDown: 313;301
-LeftDown: 92;303
+LeftUp: 345;274
+RightUp: 516;274
+RightDown: 544;370
+LeftDown: 354;369

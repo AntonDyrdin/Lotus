@@ -1,0 +1,10 @@
+sheetPoseInRCS.X:100
+sheetPoseInRCS.Y:-100
+sheetSize.Width:210
+sheetSize.Height:150
+objectSizeText:30
+objectsLevel:160
+unloadingX:0
+unloadingY:-500
+unloadingZ:160
+altitude:180
