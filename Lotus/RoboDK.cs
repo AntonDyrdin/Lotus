@@ -1428,7 +1428,7 @@ public class RoboDK
         int nbytes = _COM.Receive(bytes, 16 * 8, SocketFlags.None);
         if (nbytes != 16 * 8)
         {
-            throw new RDKException("Invalid pose sent"); //raise Exception('Problems running function');
+        //  throw new RDKException("Invalid pose sent"); //raise Exception('Problems running function');
         }
         int cnt = 0;
         for (int j = 0; j < pose.cols; j++)

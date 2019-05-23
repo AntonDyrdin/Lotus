@@ -73,7 +73,25 @@ namespace Lotus
                 recognition1.objectSize = objectSize;
             if (recognition2 != null)
                 recognition2.objectSize = objectSize;
+            List<string> saveVars = new List<string>();
 
+            saveVars.Add("sheetPoseInRCS.X:" + sheetPoseInRCS.X.ToString());
+            saveVars.Add("sheetPoseInRCS.Y:" + sheetPoseInRCS.Y.ToString());
+
+            saveVars.Add("sheetSize.Width:" + sheetSize.Width.ToString());
+            saveVars.Add("sheetSize.Height:" + sheetSize.Height.ToString());
+
+            saveVars.Add("objectSizeText:" + objectSizeText.ToString());
+
+            saveVars.Add("objectsLevel:" + objectsLevel.ToString());
+
+            saveVars.Add("unloadingX:" + unloadingX.ToString());
+            saveVars.Add("unloadingY:" + unloadingY.ToString());
+            saveVars.Add("unloadingZ:" + unloadingZ.ToString());
+
+            saveVars.Add("altitude:" + altitude.ToString());
+
+            File.WriteAllLines("saved_variables.txt", saveVars.ToArray());
             // notifybar.Text = RobotControl.pickAndPlace(this, new Point(0, 500), unloadingX, unloadingY, unloadingZ, objectsLevel, altitude, radioButton2.Checked);
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -329,6 +347,7 @@ namespace Lotus
                 }
             }
         }
+
         private void button2_Click(object sender, EventArgs e)
         {
             recognize();
@@ -377,7 +396,7 @@ namespace Lotus
                            button6_Click(null, null);
                    });
             task.Start();
-            //  task.Wait();
+            task.Wait();
         }
 
         ////////////////////////////////////////////
@@ -386,7 +405,7 @@ namespace Lotus
         {
             double Y = sheetPoseInRCS.Y - (sheetSize.Height * (work_zone_points[2].Y - point.Y) / (work_zone_points[3].Y - work_zone_points[0].Y));
             //  double T1 = 0;
-            double T1 = ((work_zone_points[2].X - work_zone_points[1].X) * (point.Y - work_zone_points[2].Y)) / (work_zone_points[1].Y - work_zone_points[2].Y);
+           double T1 = ((work_zone_points[2].X - work_zone_points[1].X) * (point.Y - work_zone_points[2].Y)) / (work_zone_points[1].Y - work_zone_points[2].Y);
             double X = sheetPoseInRCS.X + (sheetSize.Width * (work_zone_points[2].X - point.X) / (work_zone_points[1].X - work_zone_points[0].X)) - T1;
 
 
@@ -657,9 +676,7 @@ namespace Lotus
             if (!Check_ROBOT()) { return; }
             Task task = new Task(() =>
             {
-                double[] joints_home = ROBOT.JointsHome();
-
-                ROBOT.MoveJ(joints_home);
+                ROBOT.MoveJ(Mat.FromXYZRPW(new double[6] { 388, 0, 600, 0, 180, 0 }));
             });
 
             task.Start();

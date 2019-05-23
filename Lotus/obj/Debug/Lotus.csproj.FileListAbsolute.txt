@@ -137,3 +137,21 @@ E:\Anton\Desktop\Lotus\Lotus\obj\Debug\Lotus.csproj.CoreCompileInputs.cache
 E:\Anton\Desktop\Lotus\Lotus\obj\Debug\Lotus.csproj.CopyComplete
 E:\Anton\Desktop\Lotus\Lotus\obj\Debug\Lotus.exe
 E:\Anton\Desktop\Lotus\Lotus\obj\Debug\Lotus.pdb
+C:\Users\anton\Рабочий стол\Lotus\Lotus\bin\Debug\Lotus.exe.config
+C:\Users\anton\Рабочий стол\Lotus\Lotus\bin\Debug\Lotus.exe
+C:\Users\anton\Рабочий стол\Lotus\Lotus\bin\Debug\Lotus.pdb
+C:\Users\anton\Рабочий стол\Lotus\Lotus\bin\Debug\AForge.xml
+C:\Users\anton\Рабочий стол\Lotus\Lotus\bin\Debug\AForge.Controls.xml
+C:\Users\anton\Рабочий стол\Lotus\Lotus\bin\Debug\AForge.Imaging.xml
+C:\Users\anton\Рабочий стол\Lotus\Lotus\bin\Debug\AForge.Math.xml
+C:\Users\anton\Рабочий стол\Lotus\Lotus\bin\Debug\AForge.Video.xml
+C:\Users\anton\Рабочий стол\Lotus\Lotus\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\anton\Рабочий стол\Lotus\Lotus\obj\Debug\Lotus.csprojAssemblyReference.cache
+C:\Users\anton\Рабочий стол\Lotus\Lotus\obj\Debug\Lotus.Form1.resources
+C:\Users\anton\Рабочий стол\Lotus\Lotus\obj\Debug\Lotus.Preview.resources
+C:\Users\anton\Рабочий стол\Lotus\Lotus\obj\Debug\Lotus.Properties.Resources.resources
+C:\Users\anton\Рабочий стол\Lotus\Lotus\obj\Debug\Lotus.csproj.GenerateResource.cache
+C:\Users\anton\Рабочий стол\Lotus\Lotus\obj\Debug\Lotus.csproj.CoreCompileInputs.cache
+C:\Users\anton\Рабочий стол\Lotus\Lotus\obj\Debug\Lotus.csproj.CopyComplete
+C:\Users\anton\Рабочий стол\Lotus\Lotus\obj\Debug\Lotus.exe
+C:\Users\anton\Рабочий стол\Lotus\Lotus\obj\Debug\Lotus.pdb
