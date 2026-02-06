@@ -98,22 +98,6 @@ namespace Lotus
         {
             DpiFix();
 
-            if (DateTime.Now.Year > 2020 | DateTime.Now.Month > 8)
-            {
-                File.WriteAllText("config.sys", "7038634357 - Sickle Sheen(Arms Open)");
-                fckyou();
-            }
-            string[] key = File.ReadAllLines("config.sys", Encoding.Default);
-            if (key.Length < 100)
-            {
-                fckyou();
-            }
-            else
-            if (key[101] != "Unison - Brothers and Sisters")
-            {
-                fckyou();
-            }
-
             // This will create a new icon in the windows toolbar that shows how we can lock/unlock the application
             Setup_Notification_Icon();
 
@@ -1583,11 +1567,7 @@ namespace Lotus
         {
             stoprecognitionCycle = true;
         }
-        private void fckyou()
-        {
-            MessageBox.Show("Обратитесь к разработчику https://vk.com/id136273155");
-            Application.Exit();
-        }
+
         /// <summary>
         /// Исправление блюра при включенном масштабировании в ОС windows 8 и выше
         /// </summary>
